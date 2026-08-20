@@ -1,19 +1,15 @@
-# style.css — Dulce Tradición
-
-```css
 /* =========================
    DULCE TRADICIÓN
-   ESTILO ARTESANAL
+   ESTILO PRINCIPAL
 ========================= */
 
 :root {
-  --cream: #f8f1e5;
-  --cream-dark: #eee1ce;
-  --brown: #4a2f24;
-  --brown-light: #765546;
-  --gold: #b28a52;
-  --gold-light: #d5b77b;
-  --white: #fffdf8;
+  --cream: #f8f3ea;
+  --cream-dark: #eee4d4;
+  --brown: #4b3024;
+  --brown-light: #765544;
+  --gold: #b8955b;
+  --white: #fffdf9;
   --text: #3e3029;
 }
 
@@ -34,14 +30,22 @@ body {
   line-height: 1.7;
 }
 
-img {
-  width: 100%;
-  display: block;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+h1,
+h2,
+h3,
+.logo,
+.signature {
+  font-family: "Cormorant Garamond", serif;
+}
+
+em {
+  color: var(--gold);
+  font-style: italic;
 }
 
 
@@ -55,20 +59,17 @@ a {
   z-index: 1000;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
-  padding: 18px 7%;
+  padding: 20px 7%;
 
-  background: rgba(248, 241, 229, 0.96);
-  border-bottom: 1px solid rgba(178, 138, 82, 0.25);
-
-  backdrop-filter: blur(10px);
+  background: rgba(248, 243, 234, 0.96);
+  border-bottom: 1px solid rgba(184, 149, 91, 0.25);
 }
 
 .logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: 700;
   color: var(--brown);
 }
@@ -83,11 +84,10 @@ a {
 }
 
 .nav a {
-  font-size: 0.78rem;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--brown);
   transition: 0.3s;
 }
 
@@ -97,10 +97,12 @@ a {
 
 .menu-toggle {
   display: none;
-  border: none;
-  background: none;
-  font-size: 1.8rem;
-  color: var(--brown);
+  border: 1px solid var(--brown);
+  background: transparent;
+  padding: 8px 14px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
 
@@ -109,59 +111,49 @@ a {
 ========================= */
 
 .hero {
-  min-height: 88vh;
+  min-height: 82vh;
 
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
-  gap: 60px;
 
-  padding: 80px 9%;
+  gap: 50px;
+  padding: 90px 9%;
 
   background:
-    radial-gradient(circle at 80% 30%, rgba(178,138,82,0.13), transparent 35%),
-    var(--cream);
+    linear-gradient(
+      135deg,
+      #f8f3ea 0%,
+      #eee3d3 100%
+    );
+}
+
+.hero-content {
+  max-width: 700px;
 }
 
 .eyebrow {
   margin-bottom: 15px;
 
-  font-size: 0.72rem;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 3px;
-
   color: var(--gold);
-}
-
-.hero h1,
-.section-heading h2,
-.section-copy h2,
-.experience h2 {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--brown);
-  font-weight: 600;
 }
 
 .hero h1 {
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
-  line-height: 0.95;
-}
+  margin-bottom: 25px;
 
-.hero h1 em,
-.section-heading h2 em,
-.section-copy h2 em,
-.experience h2 em,
-.category-heading em,
-.menu-ending em {
-  color: var(--gold);
-  font-weight: 500;
+  font-size: clamp(55px, 7vw, 95px);
+  line-height: 0.95;
+  color: var(--brown);
 }
 
 .hero-text {
-  max-width: 650px;
-  margin: 30px 0;
+  max-width: 570px;
+  margin-bottom: 35px;
 
-  font-size: 1rem;
+  font-size: 15px;
   color: var(--brown-light);
 }
 
@@ -172,9 +164,11 @@ a {
 }
 
 .btn {
+  display: inline-block;
+
   padding: 13px 24px;
 
-  font-size: 0.75rem;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -189,51 +183,49 @@ a {
 
 .btn-primary:hover {
   background: var(--gold);
-  transform: translateY(-3px);
 }
 
 .btn-outline {
-  border: 1px solid var(--gold);
-  color: var(--brown);
+  border: 1px solid var(--brown);
 }
 
 .btn-outline:hover {
-  background: var(--gold);
+  background: var(--brown);
   color: white;
 }
 
 .hero-card {
-  min-height: 400px;
+  min-height: 330px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  background: var(--brown);
-  color: white;
+  text-align: center;
 
-  position: relative;
-  overflow: hidden;
+  border: 1px solid rgba(184, 149, 91, 0.5);
 
-  box-shadow: 15px 15px 0 var(--gold-light);
-}
-
-.bread-illustration {
-  font-size: 8rem;
-  margin-bottom: 30px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(184, 149, 91, 0.18),
+      transparent 60%
+    );
 }
 
 .hero-card span {
-  font-size: 0.7rem;
-  letter-spacing: 4px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
 }
 
 .hero-card strong {
   margin-top: 10px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-size: 38px;
+  color: var(--brown);
 }
 
 
@@ -243,52 +235,33 @@ a {
 
 .marquee {
   overflow: hidden;
-  padding: 16px 0;
+
+  padding: 18px;
 
   background: var(--brown);
   color: var(--cream);
 
-  font-size: 0.7rem;
+  text-align: center;
+
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 3px;
-  white-space: nowrap;
 }
 
 
 /* =========================
-   GENERAL SECTIONS
+   SECCIONES
 ========================= */
 
 .section {
-  padding: 110px 8%;
+  padding: 100px 9%;
 }
-
-.section-heading {
-  max-width: 750px;
-  margin: 0 auto 70px;
-  text-align: center;
-}
-
-.section-heading h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.section-heading > p:last-child {
-  color: var(--brown-light);
-}
-
-
-/* =========================
-   ABOUT
-========================= */
 
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 80px;
   align-items: center;
-  gap: 90px;
 }
 
 .section-image {
@@ -296,65 +269,66 @@ a {
 }
 
 .image-placeholder {
-  background: var(--brown);
+  min-height: 430px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  color: white;
-}
+  text-align: center;
 
-.image-placeholder.large {
-  min-height: 500px;
-  font-size: 9rem;
+  border: 1px solid rgba(184, 149, 91, 0.5);
+
+  background: var(--cream-dark);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 45px;
+  color: var(--brown);
+  letter-spacing: 3px;
 }
 
 .stamp {
   position: absolute;
+  right: -20px;
+  bottom: -20px;
 
-  right: -30px;
-  bottom: -25px;
-
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  border: 1px solid var(--gold);
+  text-align: center;
 
   border-radius: 50%;
+  border: 1px solid var(--gold);
 
   background: var(--cream);
 
-  color: var(--gold);
-
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 9px;
   letter-spacing: 2px;
-
-  text-align: center;
+  color: var(--gold);
 }
 
-.section-copy h2 {
-  font-size: clamp(3rem, 5vw, 4.8rem);
-  line-height: 1;
+.section-copy h2,
+.section-heading h2 {
   margin-bottom: 25px;
+
+  font-size: clamp(45px, 5vw, 70px);
+  line-height: 1;
+  color: var(--brown);
 }
 
 .section-copy p {
-  margin-bottom: 18px;
-  color: var(--brown-light);
+  margin-bottom: 20px;
+  max-width: 600px;
 }
 
 .signature {
   margin-top: 35px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-
+  font-size: 28px;
   color: var(--brown);
 }
 
@@ -362,71 +336,76 @@ a {
   display: block;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 0.65rem;
-
+  font-size: 10px;
   color: var(--gold);
 }
 
 
 /* =========================
-   MENU
+   MENÚ
 ========================= */
 
 .menu-section {
   background: var(--white);
 }
 
-.menu-category {
-  max-width: 1250px;
-  margin: 0 auto 110px;
-}
-
-.category-heading {
-  margin-bottom: 40px;
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 70px;
   text-align: center;
 }
 
-.category-heading h3 {
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-
-  line-height: 1;
-
-  color: var(--brown);
-
-  margin-bottom: 10px;
-}
-
-.category-heading p:last-child {
+.section-heading > p:last-child {
   color: var(--brown-light);
 }
 
 
-/* =========================
-   PRODUCT GRID
-========================= */
+/* CATEGORÍAS */
+
+.menu-category {
+  margin-bottom: 90px;
+}
+
+.category-heading {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.category-heading h3 {
+  margin-bottom: 5px;
+
+  font-size: 45px;
+  color: var(--brown);
+}
+
+.category-heading p:last-child {
+  color: var(--brown-light);
+  font-size: 14px;
+}
+
+
+/* GRID */
 
 .menu-grid {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
-  gap: 22px;
+  gap: 20px;
 }
 
-.small-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
+
+/* PRODUCTOS */
 
 .product-card {
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  border: 1px solid rgba(184, 149, 91, 0.28);
+
   background: var(--cream);
-
-  border: 1px solid rgba(178, 138, 82, 0.2);
-
-  padding: 0 0 25px;
-
-  overflow: hidden;
 
   transition:
     transform 0.3s ease,
@@ -434,218 +413,113 @@ a {
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
 
   box-shadow:
-    0 15px 35px rgba(74, 47, 36, 0.12);
+    0 15px 35px rgba(75, 48, 36, 0.08);
 }
 
 .product-card.featured {
-  border: 2px solid var(--gold);
-}
-
-.product-image {
-  height: 220px;
-
-  overflow: hidden;
-
-  background: var(--cream-dark);
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-image img {
-  transform: scale(1.07);
-}
-
-.product-card .category,
-.product-card h3,
-.product-card p,
-.product-card strong {
-  margin-left: 22px;
-  margin-right: 22px;
+  border-color: var(--gold);
 }
 
 .product-card .category {
-  display: inline-block;
+  margin-bottom: 12px;
 
-  margin-top: 20px;
-
-  font-size: 0.62rem;
+  font-size: 9px;
   font-weight: 600;
-
   letter-spacing: 2px;
 
   color: var(--gold);
 }
 
 .product-card h3 {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
+  font-size: 28px;
+  line-height: 1;
 
   color: var(--brown);
 }
 
 .product-card p {
-  min-height: 50px;
+  flex: 1;
 
-  font-size: 0.78rem;
-
+  font-size: 12px;
   color: var(--brown-light);
 }
 
 .product-card strong {
-  display: block;
-
   margin-top: 20px;
 
-  font-size: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
 
   color: var(--brown);
 }
 
-.product-icon {
-  padding: 35px 0;
-
-  text-align: center;
-
-  font-size: 4rem;
-
-  background: var(--cream-dark);
-}
-
 
 /* =========================
-   MERIENDAS
-========================= */
-
-.merienda-section {
-  padding: 55px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(178,138,82,0.12),
-      rgba(248,241,229,0.8)
-    );
-
-  border: 1px solid rgba(178,138,82,0.3);
-}
-
-.merienda-section .product-card {
-  background: var(--white);
-}
-
-
-/* =========================
-   COMBOS
-========================= */
-
-.combo-section {
-  padding-top: 30px;
-}
-
-.combo-section .product-card {
-  text-align: center;
-}
-
-.combo-section .product-card h3 {
-  font-size: 2rem;
-}
-
-.combo-section .product-card p {
-  min-height: 100px;
-}
-
-
-/* =========================
-   FINAL MENU PHRASE
+   FINAL DEL MENÚ
 ========================= */
 
 .menu-ending {
-  max-width: 700px;
-
-  margin: 30px auto 0;
-
   padding: 70px 20px;
 
   text-align: center;
 
-  border-top: 1px solid rgba(178,138,82,0.35);
-}
-
-.menu-ending span {
-  color: var(--gold);
-  font-size: 1.5rem;
+  border-top: 1px solid rgba(184, 149, 91, 0.3);
 }
 
 .menu-ending h3 {
-  margin: 20px 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 3.2rem;
-
-  line-height: 1;
-
+  font-size: 48px;
   color: var(--brown);
 }
 
 .menu-ending p {
+  margin-top: 20px;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+
   color: var(--gold);
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 1.5rem;
 }
 
 .menu-ending small {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.65rem;
+  letter-spacing: 1px;
 }
 
 
 /* =========================
-   EXPERIENCE
+   EXPERIENCIA
 ========================= */
 
 .experience {
-  padding: 110px 9%;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
 
-  background: var(--brown);
-  color: white;
-}
+  padding: 100px 9%;
 
-.experience h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 1;
+  background: var(--brown);
   color: var(--cream);
 }
 
-.experience h2 em {
-  color: var(--gold-light);
+.experience h2 {
+  margin-bottom: 25px;
+
+  font-size: clamp(45px, 5vw, 70px);
+  line-height: 1;
 }
 
-.experience-content > p:last-child {
+.experience h2 em {
+  color: #d1b477;
+}
+
+.experience-content p:last-child {
   max-width: 600px;
-
-  margin-top: 25px;
-
-  color: #dfd0c1;
+  color: #ddd0c3;
 }
 
 .experience-stats {
@@ -657,7 +531,7 @@ a {
 .experience-stats div {
   padding: 30px;
 
-  border: 1px solid rgba(213,183,123,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .experience-stats strong {
@@ -666,14 +540,12 @@ a {
   margin-bottom: 10px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.5rem;
-
-  color: var(--gold-light);
+  font-size: 40px;
+  color: #d1b477;
 }
 
 .experience-stats span {
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+  font-size: 12px;
 }
 
 
@@ -681,91 +553,80 @@ a {
    PROYECTO
 ========================= */
 
+.survey {
+  background: var(--cream);
+}
+
 .insights {
-  max-width: 1200px;
-
-  margin: auto;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-  gap: 20px;
+  gap: 25px;
 }
 
 .insight {
   padding: 30px;
 
   border-top: 2px solid var(--gold);
-
-  background: var(--cream);
+  background: var(--white);
 }
 
-.insight span {
-  color: var(--gold);
-
+.insight > span {
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 2rem;
+  font-size: 30px;
+  color: var(--gold);
 }
 
 .insight h3 {
-  margin: 10px 0;
+  margin: 15px 0 10px;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 1.8rem;
+  font-size: 30px;
 
   color: var(--brown);
 }
 
 .insight p {
-  font-size: 0.8rem;
-
+  font-size: 12px;
   color: var(--brown-light);
 }
 
 
 /* =========================
-   QUOTE
+   FRASE FINAL
 ========================= */
 
 .quote {
-  padding: 130px 8%;
+  padding: 120px 9%;
 
   text-align: center;
 
-  background: var(--cream-dark);
+  background: var(--white);
 }
 
 .quote-mark {
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 6rem;
+  font-size: 80px;
+  line-height: 0.5;
 
   color: var(--gold);
-
-  line-height: 0.5;
 }
 
-.quote blockquote {
-  margin: 30px auto;
+blockquote {
+  margin: 25px auto;
 
   max-width: 900px;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(2rem, 4vw, 3.5rem);
-
+  font-size: clamp(35px, 5vw, 60px);
   line-height: 1.1;
 
   color: var(--brown);
 }
 
 .quote p {
-  font-size: 0.7rem;
-
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 4px;
-
   color: var(--gold);
 }
 
@@ -775,19 +636,14 @@ a {
 ========================= */
 
 .footer {
-  padding: 70px 8% 25px;
-
   display: grid;
-
   grid-template-columns: 2fr 1fr 1fr;
-
   gap: 50px;
 
-  position: relative;
+  padding: 70px 9% 30px;
 
-  background: var(--brown);
-
-  color: #dfd0c1;
+  background: #302119;
+  color: var(--cream);
 }
 
 .footer .logo {
@@ -796,18 +652,14 @@ a {
 
 .footer p {
   margin-top: 10px;
-
-  font-size: 0.75rem;
+  font-size: 12px;
+  color: #cfc1b5;
 }
 
 .footer-links h4 {
-  margin-bottom: 15px;
-
-  color: var(--gold-light);
-
-  font-size: 0.7rem;
-
+  font-size: 10px;
   letter-spacing: 2px;
+  color: var(--gold);
 }
 
 .footer-bottom {
@@ -815,11 +667,12 @@ a {
 
   padding-top: 25px;
 
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 
-  font-size: 0.65rem;
+  text-align: center;
 
-  color: #b9a99a;
+  font-size: 10px;
+  color: #a99b90;
 }
 
 
@@ -832,17 +685,15 @@ a {
 }
 
 @keyframes reveal {
-
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(20px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
 
 
@@ -852,8 +703,7 @@ a {
 
 @media (max-width: 1000px) {
 
-  .menu-grid,
-  .small-grid {
+  .menu-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -863,10 +713,6 @@ a {
 
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .hero-card {
-    min-height: 300px;
   }
 
   .about,
@@ -884,11 +730,11 @@ a {
 @media (max-width: 700px) {
 
   .header {
-    padding: 15px 5%;
+    padding: 18px 5%;
   }
 
   .logo {
-    font-size: 1.7rem;
+    font-size: 25px;
   }
 
   .menu-toggle {
@@ -897,88 +743,41 @@ a {
 
   .nav {
     display: none;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    flex-direction: column;
-
-    padding: 25px;
-
-    background: var(--cream);
-
-    border-bottom: 1px solid var(--gold-light);
   }
 
-  .nav.active {
-    display: flex;
-  }
-
-  .hero {
+  .hero,
+  .section,
+  .experience {
     padding: 70px 6%;
   }
 
   .hero h1 {
-    font-size: 3.7rem;
+    font-size: 55px;
   }
 
-  .hero-card {
-    min-height: 260px;
-  }
-
-  .section {
-    padding: 75px 6%;
-  }
-
-  .about {
-    gap: 50px;
-  }
-
-  .image-placeholder.large {
-    min-height: 350px;
-  }
-
-  .stamp {
-    right: 10px;
-  }
-
-  .menu-grid,
-  .small-grid,
-  .insights {
+  .menu-grid {
     grid-template-columns: 1fr;
   }
 
-  .merienda-section {
-    padding: 30px 15px;
-  }
-
-  .experience {
-    padding: 75px 6%;
+  .insights {
+    grid-template-columns: 1fr;
   }
 
   .experience-stats {
     grid-template-columns: 1fr;
   }
 
-  .quote {
-    padding: 90px 6%;
-  }
-
-  .quote blockquote br {
-    display: none;
-  }
-
   .footer {
     grid-template-columns: 1fr;
-    padding: 60px 6% 25px;
+    padding: 60px 6% 30px;
   }
 
   .footer-bottom {
     grid-column: auto;
   }
 
+  .image-placeholder {
+    min-height: 300px;
+  }
+
 }
-```
