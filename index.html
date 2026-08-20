@@ -1,34 +1,617 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dulce Tradición | Panadería Artesanal</title>
 
-  <title>Dulce Tradición | Panadería Artesanal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <meta
-    name="description"
-    content="Dulce Tradición — panadería artesanal con sabor a hogar."
-  >
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+html {
+  scroll-behavior: smooth;
+}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+body {
+  background: #f7f1e7;
+  color: #4a3025;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+}
 
-  <link rel="stylesheet" href="style.css">
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, .logo, blockquote {
+  font-family: "Cormorant Garamond", serif;
+}
+
+em {
+  color: #b6945a;
+  font-style: italic;
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(247,241,231,.97);
+  border-bottom: 1px solid rgba(182,148,90,.3);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #b6945a;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  color: #b6945a;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 70px;
+  padding: 90px 9%;
+  background: linear-gradient(135deg,#f7f1e7,#eee1cf);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: #b6945a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin-bottom: 30px;
+  font-size: clamp(60px,7vw,100px);
+  line-height: .9;
+}
+
+.hero-text {
+  max-width: 570px;
+  margin-bottom: 35px;
+  color: #74594a;
+  font-size: 14px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: #4a3025;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #b6945a;
+}
+
+.btn-outline {
+  border: 1px solid #4a3025;
+}
+
+.btn-outline:hover {
+  background: #4a3025;
+  color: white;
+}
+
+.hero-card {
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(182,148,90,.55);
+  background: radial-gradient(circle,rgba(182,148,90,.16),transparent 65%);
+}
+
+.hero-card span {
+  color: #b6945a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero-card strong {
+  margin-top: 12px;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 42px;
+}
+
+/* FRASE */
+
+.marquee {
+  padding: 17px;
+  background: #4a3025;
+  color: #f7f1e7;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* GENERAL */
+
+.section {
+  padding: 110px 9%;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.section-heading h2,
+.section-copy h2 {
+  margin-bottom: 25px;
+  font-size: clamp(48px,5vw,70px);
+  line-height: .95;
+}
+
+.section-heading > p:last-child {
+  color: #74594a;
+  font-size: 14px;
+}
+
+/* NOSOTROS */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.image-placeholder {
+  min-height: 430px;
+  background: linear-gradient(135deg,#e9ddcc,#f4eadb);
+  border: 1px solid rgba(182,148,90,.45);
+}
+
+.section-image {
+  position: relative;
+}
+
+.stamp {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 115px;
+  height: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #b6945a;
+  border-radius: 50%;
+  background: #f7f1e7;
+  color: #b6945a;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.section-copy p {
+  max-width: 620px;
+  margin-bottom: 20px;
+  color: #74594a;
+  font-size: 14px;
+}
+
+.signature {
+  margin-top: 35px;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 30px;
+}
+
+.signature small {
+  display: block;
+  color: #b6945a;
+  font-family: "Montserrat",sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* MENU */
+
+.menu-section {
+  background: #fffdf9;
+}
+
+.menu-category {
+  margin-bottom: 100px;
+}
+
+.category-heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.category-heading h3 {
+  margin-bottom: 8px;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.category-heading p {
+  color: #74594a;
+  font-size: 13px;
+}
+
+.category-heading p:last-child {
+  color: #b6945a;
+  font-weight: 600;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+.product-card {
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  background: #f7f1e7;
+  border: 1px solid rgba(182,148,90,.25);
+  transition: .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: #b6945a;
+  box-shadow: 0 15px 35px rgba(74,48,37,.09);
+}
+
+.product-card.featured {
+  border: 1px solid #b6945a;
+}
+
+.product-card .category {
+  margin-bottom: 13px;
+  color: #b6945a;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.product-card h3 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.product-card p {
+  flex: 1;
+  color: #74594a;
+  font-size: 12px;
+}
+
+.product-card strong {
+  margin-top: 20px;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 25px;
+}
+
+/* FINAL MENU */
+
+.menu-ending {
+  padding: 75px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(182,148,90,.35);
+}
+
+.menu-ending h3 {
+  font-size: 50px;
+  line-height: 1;
+}
+
+.menu-ending p {
+  margin-top: 25px;
+  color: #b6945a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.menu-ending small {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* EXPERIENCIA */
+
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 110px 9%;
+  background: #4a3025;
+  color: #f7f1e7;
+}
+
+.experience h2 {
+  margin-bottom: 25px;
+  font-size: clamp(48px,5vw,70px);
+  line-height: .95;
+}
+
+.experience-content p:last-child {
+  max-width: 600px;
+  color: #d8ccc0;
+  font-size: 14px;
+}
+
+.experience-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.experience-stats div {
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.experience-stats strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #d0b274;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 42px;
+}
+
+.experience-stats span {
+  font-size: 11px;
+}
+
+/* PROYECTO */
+
+.survey {
+  background: #f7f1e7;
+}
+
+.insights {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+}
+
+.insight {
+  padding: 30px;
+  background: #fffdf9;
+  border-top: 2px solid #b6945a;
+}
+
+.insight > span {
+  color: #b6945a;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 30px;
+}
+
+.insight h3 {
+  margin: 15px 0 10px;
+  font-size: 30px;
+}
+
+.insight p {
+  color: #74594a;
+  font-size: 12px;
+}
+
+/* FRASE FINAL */
+
+.quote {
+  padding: 120px 9%;
+  text-align: center;
+  background: #fffdf9;
+}
+
+.quote-mark {
+  color: #b6945a;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 85px;
+  line-height: .5;
+}
+
+blockquote {
+  max-width: 900px;
+  margin: 30px auto;
+  font-size: clamp(35px,5vw,60px);
+  line-height: 1.05;
+}
+
+.quote p {
+  color: #b6945a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+/* FOOTER */
+
+.footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  padding: 70px 9% 30px;
+  background: #302119;
+  color: #f7f1e7;
+}
+
+.footer .logo {
+  color: #f7f1e7;
+}
+
+.footer p {
+  margin-top: 10px;
+  color: #cbbeb2;
+  font-size: 11px;
+}
+
+.footer-links h4 {
+  color: #b6945a;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.footer-bottom {
+  grid-column: 1/-1;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,.15);
+  color: #a99c92;
+  text-align: center;
+  font-size: 9px;
+}
+
+/* CELULAR */
+
+@media(max-width:1050px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about,
+  .experience {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .insights {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px) {
+
+  .header {
+    padding: 17px 5%;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 75px 6%;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero-card {
+    min-height: 250px;
+  }
+
+  .section {
+    padding: 80px 6%;
+  }
+
+  .menu-grid,
+  .insights {
+    grid-template-columns: 1fr;
+  }
+
+  .experience {
+    padding: 80px 6%;
+  }
+
+  .experience-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 60px 6% 30px;
+  }
+
+  .footer-bottom {
+    grid-column: auto;
+  }
+
+  .image-placeholder {
+    min-height: 300px;
+  }
+
+  .stamp {
+    right: 10px;
+  }
+
+  .category-heading h3 {
+    font-size: 42px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header class="header">
-
-  <a href="#inicio" class="logo">
-    Dulce <span>Tradición</span>
-  </a>
+  <a href="#inicio" class="logo">Dulce <span>Tradición</span></a>
 
   <nav class="nav">
     <a href="#inicio">Inicio</a>
@@ -38,21 +621,13 @@
     <a href="#proyecto">Proyecto</a>
     <a href="#contacto">Contacto</a>
   </nav>
-
 </header>
-
 
 <main>
 
-<!-- ================= INICIO ================= -->
-
 <section id="inicio" class="hero">
-
-  <div class="hero-content reveal">
-
-    <p class="eyebrow">
-      PANADERÍA ARTESANAL · BOGOTÁ
-    </p>
+  <div class="hero-content">
+    <p class="eyebrow">PANADERÍA ARTESANAL · BOGOTÁ</p>
 
     <h1>
       El sabor de lo que
@@ -67,58 +642,28 @@
     </p>
 
     <div class="hero-buttons">
-
-      <a href="#menu" class="btn btn-primary">
-        Ver nuestro menú
-      </a>
-
-      <a href="#nosotros" class="btn btn-outline">
-        Conócenos
-      </a>
-
+      <a href="#menu" class="btn btn-primary">Ver nuestro menú</a>
+      <a href="#nosotros" class="btn btn-outline">Conócenos</a>
     </div>
-
   </div>
 
-
-  <div class="hero-card reveal">
-
-    <div class="bread-illustration"></div>
-
+  <div class="hero-card">
     <span>HECHO A MANO</span>
-
-    <strong>
-      Fresco cada día
-    </strong>
-
+    <strong>Fresco cada día</strong>
   </div>
-
 </section>
-
-
-<!-- ================= FRASE ================= -->
 
 <section class="marquee">
-
   ✦ ARTESANAL
-  &nbsp;&nbsp;
-  ✦ FRESCO
-  &nbsp;&nbsp;
-  ✦ TRADICIONAL
-  &nbsp;&nbsp;
-  ✦ HECHO CON AMOR
-  &nbsp;&nbsp;
-  ✦ DULCE TRADICIÓN
-
+  &nbsp;&nbsp; ✦ FRESCO
+  &nbsp;&nbsp; ✦ TRADICIONAL
+  &nbsp;&nbsp; ✦ HECHO CON AMOR
+  &nbsp;&nbsp; ✦ DULCE TRADICIÓN
 </section>
-
-
-<!-- ================= NOSOTROS ================= -->
 
 <section id="nosotros" class="section about">
 
-  <div class="section-image reveal">
-
+  <div class="section-image">
     <div class="image-placeholder"></div>
 
     <span class="stamp">
@@ -126,15 +671,10 @@
       <br>
       EL CORAZÓN
     </span>
-
   </div>
 
-
-  <div class="section-copy reveal">
-
-    <p class="eyebrow">
-      NUESTRA HISTORIA
-    </p>
+  <div class="section-copy">
+    <p class="eyebrow">NUESTRA HISTORIA</p>
 
     <h2>
       Tradición que se
@@ -159,21 +699,14 @@
       Dulce Tradición
       <small>— con sabor a hogar</small>
     </div>
-
   </div>
 
 </section>
 
-
-<!-- ================= MENÚ ================= -->
-
 <section id="menu" class="section menu-section">
 
-  <div class="section-heading reveal">
-
-    <p class="eyebrow">
-      NUESTRO MENÚ
-    </p>
+  <div class="section-heading">
+    <p class="eyebrow">NUESTRO MENÚ</p>
 
     <h2>
       Sabores para
@@ -184,30 +717,15 @@
       Panes tradicionales, meriendas, bebidas y postres
       preparados para acompañar cada momento del día.
     </p>
-
   </div>
-
-
-  <!-- PANES GRANDES -->
 
   <div class="menu-category">
 
     <div class="category-heading">
-
-      <h3>
-        Panes grandes
-      </h3>
-
-      <p>
-        Tradicionales, frescos y recién horneados
-      </p>
-
-      <p>
-        Precio estimado: $4.500
-      </p>
-
+      <h3>Panes grandes</h3>
+      <p>Tradicionales, frescos y recién horneados</p>
+      <p>Precio estimado: $4.500</p>
     </div>
-
 
     <div class="menu-grid">
 
@@ -248,7 +766,7 @@
 
       <article class="product-card">
         <span class="category">ESPECIALIDAD</span>
-        <h3>Pan de jamón y queso</h3>
+        <h3>Pan jamón y queso</h3>
         <p>Una combinación clásica, cremosa y deliciosa.</p>
         <strong>$4.500</strong>
       </article>
@@ -268,26 +786,14 @@
       </article>
 
     </div>
-
   </div>
-
-
-  <!-- PANES PEQUEÑOS -->
 
   <div class="menu-category">
 
     <div class="category-heading">
-
-      <h3>
-        Panes pequeños
-      </h3>
-
-      <p>
-        El tamaño perfecto para acompañar tu café.
-      </p>
-
+      <h3>Panes pequeños</h3>
+      <p>El tamaño perfecto para acompañar tu café.</p>
     </div>
-
 
     <div class="menu-grid">
 
@@ -341,26 +847,14 @@
       </article>
 
     </div>
-
   </div>
-
-
-  <!-- MERIENDAS -->
 
   <div class="menu-category">
 
     <div class="category-heading">
-
-      <h3>
-        Meriendas
-      </h3>
-
-      <p>
-        Combos pensados para estudiantes y para esos antojos del día.
-      </p>
-
+      <h3>Meriendas</h3>
+      <p>Combos pensados para estudiantes y para esos antojos del día.</p>
     </div>
-
 
     <div class="menu-grid">
 
@@ -393,26 +887,14 @@
       </article>
 
     </div>
-
   </div>
-
-
-  <!-- POSTRES -->
 
   <div class="menu-category">
 
     <div class="category-heading">
-
-      <h3>
-        Repostería y postres
-      </h3>
-
-      <p>
-        Un toque dulce para terminar bien el día.
-      </p>
-
+      <h3>Repostería y postres</h3>
+      <p>Un toque dulce para terminar bien el día.</p>
     </div>
-
 
     <div class="menu-grid">
 
@@ -459,26 +941,14 @@
       </article>
 
     </div>
-
   </div>
-
-
-  <!-- GALLETERÍA -->
 
   <div class="menu-category">
 
     <div class="category-heading">
-
-      <h3>
-        Galletería
-      </h3>
-
-      <p>
-        Pequeños detalles horneados para endulzar tu día.
-      </p>
-
+      <h3>Galletería</h3>
+      <p>Pequeños detalles horneados para endulzar tu día.</p>
     </div>
-
 
     <div class="menu-grid">
 
@@ -511,26 +981,14 @@
       </article>
 
     </div>
-
   </div>
-
-
-  <!-- BEBIDAS -->
 
   <div class="menu-category">
 
     <div class="category-heading">
-
-      <h3>
-        Bebidas
-      </h3>
-
-      <p>
-        Calientes o frías, siempre hay algo para acompañar tu pan.
-      </p>
-
+      <h3>Bebidas</h3>
+      <p>Calientes o frías, siempre hay algo para acompañar tu pan.</p>
     </div>
-
 
     <div class="menu-grid">
 
@@ -591,42 +1049,26 @@
       </article>
 
     </div>
-
   </div>
 
-
-  <!-- FRASE DEL MENÚ -->
-
   <div class="menu-ending">
-
     <h3>
       Porque la felicidad
       <br>
       se <em>comparte.</em>
     </h3>
 
-    <p>
-      UN PAN · UN CAFÉ · UN MOMENTO
-    </p>
+    <p>UN PAN · UN CAFÉ · UN MOMENTO</p>
 
-    <small>
-      Dulce Tradición · con sabor a hogar
-    </small>
-
+    <small>Dulce Tradición · con sabor a hogar</small>
   </div>
 
 </section>
 
-
-<!-- ================= EXPERIENCIA ================= -->
-
 <section id="experiencia" class="experience">
 
-  <div class="experience-content reveal">
-
-    <p class="eyebrow">
-      MÁS QUE UNA PANADERÍA
-    </p>
+  <div class="experience-content">
+    <p class="eyebrow">MÁS QUE UNA PANADERÍA</p>
 
     <h2>
       Un lugar para quedarse
@@ -640,11 +1082,9 @@
       por el ambiente, el aroma y la sensación
       de estar en casa.
     </p>
-
   </div>
 
-
-  <div class="experience-stats reveal">
+  <div class="experience-stats">
 
     <div>
       <strong>01</strong>
@@ -670,16 +1110,11 @@
 
 </section>
 
-
-<!-- ================= PROYECTO ================= -->
-
 <section id="proyecto" class="section survey">
 
-  <div class="section-heading reveal">
+  <div class="section-heading">
 
-    <p class="eyebrow">
-      NUESTRO PROYECTO
-    </p>
+    <p class="eyebrow">NUESTRO PROYECTO</p>
 
     <h2>
       Escuchamos a nuestros
@@ -694,57 +1129,39 @@
 
   </div>
 
-
   <div class="insights">
 
-    <div class="insight reveal">
+    <div class="insight">
       <span>01</span>
       <h3>Variedad</h3>
-      <p>
-        Un menú amplio con productos tradicionales
-        y opciones innovadoras.
-      </p>
+      <p>Un menú amplio con productos tradicionales y opciones innovadoras.</p>
     </div>
 
-    <div class="insight reveal">
+    <div class="insight">
       <span>02</span>
       <h3>Horarios flexibles</h3>
-      <p>
-        Una panadería pensada para diferentes
-        momentos del día.
-      </p>
+      <p>Una panadería pensada para diferentes momentos del día.</p>
     </div>
 
-    <div class="insight reveal">
+    <div class="insight">
       <span>03</span>
       <h3>Buena atención</h3>
-      <p>
-        Servicio amable, cercano y enfocado
-        en la experiencia.
-      </p>
+      <p>Servicio amable, cercano y enfocado en la experiencia.</p>
     </div>
 
-    <div class="insight reveal">
+    <div class="insight">
       <span>04</span>
       <h3>Ambiente especial</h3>
-      <p>
-        Un espacio agradable para compartir
-        con familia y amigos.
-      </p>
+      <p>Un espacio agradable para compartir con familia y amigos.</p>
     </div>
 
   </div>
 
 </section>
 
-
-<!-- ================= FRASE FINAL ================= -->
-
 <section class="quote">
 
-  <div class="quote-mark">
-    “
-  </div>
+  <div class="quote-mark">“</div>
 
   <blockquote>
     Hay sabores que alimentan el cuerpo,
@@ -752,70 +1169,36 @@
     y otros que alimentan los recuerdos.
   </blockquote>
 
-  <p>
-    DULCE TRADICIÓN
-  </p>
+  <p>DULCE TRADICIÓN</p>
 
 </section>
 
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer id="contacto" class="footer">
 
   <div>
-
     <a href="#inicio" class="logo">
       Dulce <span>Tradición</span>
     </a>
 
-    <p>
-      Panadería artesanal con sabor a hogar.
-    </p>
-
+    <p>Panadería artesanal con sabor a hogar.</p>
   </div>
-
 
   <div class="footer-links">
-
-    <h4>
-      VISÍTANOS
-    </h4>
-
-    <p>
-      Bogotá, Colombia
-    </p>
-
-    <p>
-      Lun — Sáb · 7:00 AM — 9:00 PM
-    </p>
-
+    <h4>VISÍTANOS</h4>
+    <p>Bogotá, Colombia</p>
+    <p>Lun — Sáb · 7:00 AM — 9:00 PM</p>
   </div>
-
 
   <div class="footer-links">
-
-    <h4>
-      CONTACTO
-    </h4>
-
-    <p>
-      dulcetradicion@email.com
-    </p>
-
-    <p>
-      Instagram · WhatsApp
-    </p>
-
+    <h4>CONTACTO</h4>
+    <p>dulcetradicion@email.com</p>
+    <p>Instagram · WhatsApp</p>
   </div>
-
 
   <div class="footer-bottom">
-
     © 2026 Dulce Tradición · Proyecto académico
-
   </div>
 
 </footer>
