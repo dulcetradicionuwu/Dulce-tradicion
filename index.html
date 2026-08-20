@@ -1,101 +1,873 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dulce Tradición | Panadería Artesanal</title>
+<title>Dulce Tradición | Panadería Artesanal</title>
 
-  <meta
-    name="description"
-    content="Dulce Tradición — panadería artesanal con sabor a hogar."
-  >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+<style>
 
-  <link rel="stylesheet" href="style.css">
+/* =========================
+   GENERAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f1e7;
+  color: #493027;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.signature,
+blockquote {
+  font-family: "Cormorant Garamond", serif;
+}
+
+em {
+  color: #b69358;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 8%;
+
+  background: rgba(247,241,231,.97);
+
+  border-bottom: 1px solid rgba(182,147,88,.3);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #b69358;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  color: #b69358;
+}
+
+.menu-toggle {
+  display: none;
+
+  padding: 8px 14px;
+
+  background: transparent;
+  border: 1px solid #493027;
+
+  font-family: "Montserrat";
+  font-size: 10px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 86vh;
+
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 90px 9%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #f7f1e7,
+    #eadcc8
+  );
+}
+
+.eyebrow {
+  margin-bottom: 15px;
+
+  color: #b69358;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin-bottom: 30px;
+
+  font-size: clamp(60px,7vw,100px);
+
+  line-height: .9;
+}
+
+.hero-text {
+  max-width: 570px;
+
+  margin-bottom: 35px;
+
+  color: #75594a;
+
+  font-size: 14px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 14px 25px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: #493027;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #b69358;
+}
+
+.btn-outline {
+  border: 1px solid #493027;
+}
+
+.btn-outline:hover {
+  background: #493027;
+  color: white;
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+  min-height: 370px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid #b69358;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(182,147,88,.2),
+    transparent 65%
+  );
+}
+
+.hero-card span {
+  color: #b69358;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.hero-card strong {
+  margin-top: 10px;
+
+  font-size: 42px;
+}
+
+
+/* =========================
+   BARRA
+========================= */
+
+.marquee {
+  padding: 17px;
+
+  background: #493027;
+
+  color: #f7f1e7;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+  padding: 110px 9%;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+.section-image {
+  position: relative;
+}
+
+.image-placeholder {
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #eadcc8;
+
+  border: 1px solid #b69358;
+
+  font-size: 42px;
+
+  letter-spacing: 3px;
+}
+
+.stamp {
+  position: absolute;
+
+  right: -20px;
+  bottom: -20px;
+
+  width: 115px;
+  height: 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 50%;
+
+  border: 1px solid #b69358;
+
+  background: #f7f1e7;
+
+  color: #b69358;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.section-copy h2,
+.section-heading h2 {
+  margin-bottom: 25px;
+
+  font-size: clamp(48px,5vw,70px);
+
+  line-height: .95;
+}
+
+.section-copy p {
+  max-width: 620px;
+
+  margin-bottom: 20px;
+
+  color: #75594a;
+
+  font-size: 14px;
+}
+
+.signature {
+  margin-top: 35px;
+
+  font-size: 30px;
+}
+
+.signature small {
+  display: block;
+
+  color: #b69358;
+
+  font-family: "Montserrat";
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+.menu-section {
+  background: #fffdf9;
+}
+
+.section-heading {
+  max-width: 720px;
+
+  margin: 0 auto 80px;
+
+  text-align: center;
+}
+
+.section-heading > p:last-child {
+  color: #75594a;
+
+  font-size: 14px;
+}
+
+.menu-category {
+  margin-bottom: 100px;
+}
+
+.category-heading {
+  margin-bottom: 40px;
+
+  text-align: center;
+}
+
+.category-heading h3 {
+  margin-bottom: 5px;
+
+  font-size: 48px;
+}
+
+.category-heading p:last-child {
+  color: #75594a;
+
+  font-size: 13px;
+}
+
+
+/* PRODUCTOS */
+
+.menu-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 20px;
+}
+
+.product-card {
+  min-height: 245px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 27px;
+
+  background: #f7f1e7;
+
+  border: 1px solid rgba(182,147,88,.3);
+
+  transition: .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #b69358;
+
+  box-shadow: 0 15px 35px rgba(73,48,39,.1);
+}
+
+.product-card.featured {
+  border: 1px solid #b69358;
+}
+
+.product-card .category {
+  margin-bottom: 13px;
+
+  color: #b69358;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.product-card h3 {
+  margin-bottom: 10px;
+
+  font-size: 28px;
+
+  line-height: 1;
+}
+
+.product-card p {
+  flex: 1;
+
+  color: #75594a;
+
+  font-size: 12px;
+}
+
+.product-card strong {
+  margin-top: 20px;
+
+  font-size: 25px;
+}
+
+
+/* =========================
+   FINAL MENÚ
+========================= */
+
+.menu-ending {
+  padding: 75px 20px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(182,147,88,.35);
+}
+
+.menu-ending h3 {
+  font-size: 50px;
+
+  line-height: 1;
+}
+
+.menu-ending p {
+  margin-top: 25px;
+
+  color: #b69358;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   EXPERIENCIA
+========================= */
+
+.experience {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  padding: 110px 9%;
+
+  background: #493027;
+
+  color: #f7f1e7;
+}
+
+.experience h2 {
+  margin-bottom: 25px;
+
+  color: #f7f1e7;
+
+  font-size: clamp(48px,5vw,70px);
+
+  line-height: .95;
+}
+
+.experience h2 em {
+  color: #d0b274;
+}
+
+.experience-content p:last-child {
+  max-width: 600px;
+
+  color: #d8ccc0;
+
+  font-size: 14px;
+}
+
+.experience-stats {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.experience-stats div {
+  padding: 30px;
+
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.experience-stats strong {
+  display: block;
+
+  color: #d0b274;
+
+  font-size: 42px;
+}
+
+.experience-stats span {
+  font-size: 11px;
+}
+
+
+/* =========================
+   PROYECTO
+========================= */
+
+.insights {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 25px;
+}
+
+.insight {
+  padding: 30px;
+
+  background: #fffdf9;
+
+  border-top: 2px solid #b69358;
+}
+
+.insight > span {
+  color: #b69358;
+
+  font-size: 30px;
+}
+
+.insight h3 {
+  margin: 15px 0 10px;
+
+  font-size: 30px;
+}
+
+.insight p {
+  color: #75594a;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.quote {
+  padding: 120px 9%;
+
+  text-align: center;
+
+  background: #fffdf9;
+}
+
+.quote-mark {
+  color: #b69358;
+
+  font-size: 85px;
+
+  line-height: .5;
+}
+
+blockquote {
+  max-width: 900px;
+
+  margin: 30px auto;
+
+  font-size: clamp(35px,5vw,60px);
+
+  line-height: 1.05;
+}
+
+.quote p {
+  color: #b69358;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 50px;
+
+  padding: 70px 9% 30px;
+
+  background: #302119;
+
+  color: #f7f1e7;
+}
+
+.footer .logo {
+  color: #f7f1e7;
+}
+
+.footer p {
+  margin-top: 10px;
+
+  color: #cbbeb2;
+
+  font-size: 11px;
+}
+
+.footer-links h4 {
+  color: #b69358;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.footer-bottom {
+  grid-column: 1/-1;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255,255,255,.15);
+
+  color: #a99c92;
+
+  text-align: center;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:1000px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about,
+  .experience {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .insights {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:700px) {
+
+  .header {
+    padding: 17px 5%;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    padding: 70px 6%;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .section {
+    padding: 80px 6%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insights {
+    grid-template-columns: 1fr;
+  }
+
+  .experience {
+    padding: 80px 6%;
+  }
+
+  .experience-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+
+    padding: 60px 6% 30px;
+  }
+
+  .footer-bottom {
+    grid-column: auto;
+  }
+
+}
+
+</style>
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
 <header class="header">
 
-  <a href="#inicio" class="logo">
-    Dulce <span>Tradición</span>
-  </a>
+<a href="#inicio" class="logo">
+Dulce <span>Tradición</span>
+</a>
 
-  <button class="menu-toggle" aria-label="Abrir menú">
-    MENÚ
-  </button>
+<button class="menu-toggle">
+MENÚ
+</button>
 
-  <nav class="nav">
-    <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#menu">Menú</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyecto">Proyecto</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<nav class="nav">
+
+<a href="#inicio">Inicio</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#menu">Menú</a>
+<a href="#experiencia">Experiencia</a>
+<a href="#proyecto">Proyecto</a>
+<a href="#contacto">Contacto</a>
+
+</nav>
 
 </header>
 
 
 <main>
 
+
 <!-- ================= INICIO ================= -->
 
 <section id="inicio" class="hero">
 
-  <div class="hero-content reveal">
+<div class="hero-content">
 
-    <p class="eyebrow">
-      PANADERÍA ARTESANAL · BOGOTÁ
-    </p>
+<p class="eyebrow">
+PANADERÍA ARTESANAL · BOGOTÁ
+</p>
 
-    <h1>
-      El sabor de lo que
-      <br>
-      <em>siempre vuelve.</em>
-    </h1>
+<h1>
+El sabor de lo que
+<br>
+<em>siempre vuelve.</em>
+</h1>
 
-    <p class="hero-text">
-      Recetas hechas con cariño, ingredientes seleccionados
-      y ese aroma a pan recién horneado que convierte
-      cualquier momento en una tradición.
-    </p>
+<p class="hero-text">
+Recetas hechas con cariño, ingredientes seleccionados
+y ese aroma a pan recién horneado que convierte
+cualquier momento en una tradición.
+</p>
 
-    <div class="hero-buttons">
+<div class="hero-buttons">
 
-      <a href="#menu" class="btn btn-primary">
-        Ver nuestro menú
-      </a>
+<a href="#menu" class="btn btn-primary">
+Ver nuestro menú
+</a>
 
-      <a href="#nosotros" class="btn btn-outline">
-        Conócenos
-      </a>
+<a href="#nosotros" class="btn btn-outline">
+Conócenos
+</a>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 
-  <div class="hero-card reveal">
+<div class="hero-card">
 
-    <span>HECHO A MANO</span>
+<span>
+HECHO A MANO
+</span>
 
-    <strong>
-      Fresco cada día
-    </strong>
+<strong>
+Fresco cada día
+</strong>
 
-  </div>
+</div>
 
 </section>
 
@@ -104,17 +876,15 @@
 
 <section class="marquee">
 
-  <div>
-    ARTESANAL
-    &nbsp;&nbsp; · &nbsp;&nbsp;
-    FRESCO
-    &nbsp;&nbsp; · &nbsp;&nbsp;
-    TRADICIONAL
-    &nbsp;&nbsp; · &nbsp;&nbsp;
-    HECHO CON AMOR
-    &nbsp;&nbsp; · &nbsp;&nbsp;
-    ARTESANAL
-  </div>
+ARTESANAL
+&nbsp;&nbsp; · &nbsp;&nbsp;
+FRESCO
+&nbsp;&nbsp; · &nbsp;&nbsp;
+TRADICIONAL
+&nbsp;&nbsp; · &nbsp;&nbsp;
+HECHO CON AMOR
+&nbsp;&nbsp; · &nbsp;&nbsp;
+ARTESANAL
 
 </section>
 
@@ -123,54 +893,63 @@
 
 <section id="nosotros" class="section about">
 
-  <div class="section-image reveal">
+<div class="section-image">
 
-    <div class="image-placeholder large">
-      DULCE
-      <br>
-      TRADICIÓN
-    </div>
+<div class="image-placeholder">
 
-    <span class="stamp">
-      DESDE
-      <br>
-      EL CORAZÓN
-    </span>
+DULCE
+<br>
+TRADICIÓN
 
-  </div>
+</div>
+
+<span class="stamp">
+
+DESDE
+<br>
+EL CORAZÓN
+
+</span>
+
+</div>
 
 
-  <div class="section-copy reveal">
+<div class="section-copy">
 
-    <p class="eyebrow">
-      NUESTRA HISTORIA
-    </p>
+<p class="eyebrow">
+NUESTRA HISTORIA
+</p>
 
-    <h2>
-      Tradición que se
-      <em>hornea</em>
-      todos los días.
-    </h2>
+<h2>
+Tradición que se
+<em>hornea</em>
+todos los días.
+</h2>
 
-    <p>
-      Dulce Tradición nace de una idea sencilla:
-      recuperar el encanto de la panadería tradicional
-      y llevarlo a una experiencia cálida, moderna y cercana.
-    </p>
+<p>
+Dulce Tradición nace de una idea sencilla:
+recuperar el encanto de la panadería tradicional
+y llevarlo a una experiencia cálida, moderna y cercana.
+</p>
 
-    <p>
-      Creemos que un buen pan no solo alimenta;
-      también reúne, recuerda y crea momentos.
-      Por eso cuidamos cada preparación desde la masa
-      hasta el último detalle.
-    </p>
+<p>
+Creemos que un buen pan no solo alimenta;
+también reúne, recuerda y crea momentos.
+Por eso cuidamos cada preparación desde la masa
+hasta el último detalle.
+</p>
 
-    <div class="signature">
-      Dulce Tradición
-      <small>— con sabor a hogar</small>
-    </div>
+<div class="signature">
 
-  </div>
+Dulce Tradición
+
+<small>
+— con sabor a hogar
+</small>
+
+</div>
+
+</div>
 
 </section>
 
@@ -179,716 +958,787 @@
 
 <section id="menu" class="section menu-section">
 
-  <div class="section-heading reveal">
+<div class="section-heading">
 
-    <p class="eyebrow">
-      NUESTRO MENÚ
-    </p>
+<p class="eyebrow">
+NUESTRO MENÚ
+</p>
 
-    <h2>
-      Sabores para
-      <em>compartir.</em>
-    </h2>
+<h2>
+Sabores para
+<em>compartir.</em>
+</h2>
 
-    <p>
-      Panes recién horneados, amasijos colombianos,
-      postres, galletas y bebidas para cada antojo.
-    </p>
-
-  </div>
-
-
-<!-- ================= PANES GRANDES ================= -->
-
-<div class="menu-category">
-
-  <div class="category-heading">
-
-    <p class="eyebrow">
-      PARA COMPARTIR
-    </p>
-
-    <h3>
-      Panes grandes
-    </h3>
-
-    <p>
-      <em>Porque la felicidad se comparte.</em>
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">PAN GRANDE</span>
-      <h3>Pan Hawaiano</h3>
-      <p>Pan suave con jamón, queso y un toque dulce de piña.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">PAN GRANDE</span>
-      <h3>Pan Galleta</h3>
-      <p>Dorado por fuera, suave por dentro y perfecto para acompañar el café.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">PAN GRANDE</span>
-      <h3>Pan Coco Miel</h3>
-      <p>Pan tierno con coco y un delicado toque de miel.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card featured">
-      <span class="category">FAVORITO</span>
-      <h3>Pan de Queso</h3>
-      <p>Esponjoso, doradito y con ese sabor irresistible del queso.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Pan Aliñado</h3>
-      <p>Suave, aromático y preparado con una masa enriquecida.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">FAVORITO</span>
-      <h3>Pan Jamón &amp; Queso</h3>
-      <p>La combinación clásica de jamón y queso dentro de un pan recién horneado.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">INTEGRAL</span>
-      <h3>Pan Integral</h3>
-      <p>Una opción con fibra y el sabor de un buen pan artesanal.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">DULCE</span>
-      <h3>Pan de Chocolate</h3>
-      <p>Pan suave con corazón de chocolate para los amantes de lo dulce.</p>
-      <strong>$4.500</strong>
-    </article>
-
-  </div>
+<p>
+Panes recién horneados, sabores colombianos,
+postres, galletas y bebidas para cada antojo.
+</p>
 
 </div>
 
 
-<!-- ================= PANES PEQUEÑOS ================= -->
+<!-- PANES GRANDES -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      PARA EL ANTOJO
-    </p>
+<p class="eyebrow">
+PARA COMPARTIR
+</p>
 
-    <h3>
-      Panes pequeños
-    </h3>
+<h3>
+Panes grandes
+</h3>
 
-    <p>
-      Pequeños en tamaño, enormes en sabor.
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">PAN PEQUEÑO</span>
-      <h3>Hojaldre</h3>
-      <p>Crujiente, dorado y lleno de capas.</p>
-      <strong>$1.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Calentano</h3>
-      <p>Pequeño, doradito y con sabor tradicional.</p>
-      <strong>$1.200</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">PAN PEQUEÑO</span>
-      <h3>Pitufo</h3>
-      <p>Suave, ligero y perfecto para el desayuno.</p>
-      <strong>$1.200</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">PAN PEQUEÑO</span>
-      <h3>Rollo</h3>
-      <p>Hojaldre dorado y delicado.</p>
-      <strong>$1.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Blandito</h3>
-      <p>Suave, esponjoso y perfecto para cualquier momento.</p>
-      <strong>$1.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Mogolla</h3>
-      <p>Pan de miga tierna y sabor casero.</p>
-      <strong>$1.200</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">FAVORITO</span>
-      <h3>Pan de Queso</h3>
-      <p>Pequeño, calentito y lleno de queso.</p>
-      <strong>$1.800</strong>
-    </article>
-
-  </div>
+<p>
+<em>Porque la felicidad se comparte.</em>
+</p>
 
 </div>
 
 
-<!-- ================= SABORES COLOMBIANOS ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">PAN GRANDE</span>
+<h3>Pan Hawaiano</h3>
+<p>Pan suave con jamón, queso y un toque dulce de piña.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">PAN GRANDE</span>
+<h3>Pan Galleta</h3>
+<p>Dorado por fuera, suave por dentro y perfecto para acompañar el café.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">PAN GRANDE</span>
+<h3>Pan Coco Miel</h3>
+<p>Pan tierno con coco y un delicado toque de miel.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card featured">
+<span class="category">FAVORITO</span>
+<h3>Pan de Queso</h3>
+<p>Esponjoso, doradito y con ese sabor irresistible del queso.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Pan Aliñado</h3>
+<p>Suave, aromático y preparado con una masa enriquecida.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">FAVORITO</span>
+<h3>Pan Jamón &amp; Queso</h3>
+<p>La combinación clásica de jamón y queso dentro de un pan recién horneado.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">INTEGRAL</span>
+<h3>Pan Integral</h3>
+<p>Una opción con fibra y el sabor de un buen pan artesanal.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">DULCE</span>
+<h3>Pan de Chocolate</h3>
+<p>Pan suave con corazón de chocolate para los amantes de lo dulce.</p>
+<strong>$4.500</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- PANES PEQUEÑOS -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      SABORES DE COLOMBIA
-    </p>
+<p class="eyebrow">
+PARA EL ANTOJO
+</p>
 
-    <h3>
-      Los clásicos de siempre
-    </h3>
+<h3>
+Panes pequeños
+</h3>
 
-    <p>
-      <em>Una panadería colombiana se reconoce por sus amasijos.</em>
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">AMASIJO</span>
-      <h3>Pandebono</h3>
-      <p>Suave por dentro y ligeramente dorado por fuera.</p>
-      <strong>$2.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">AMASIJO</span>
-      <h3>Almojábana</h3>
-      <p>Tradicional, suave y con mucho sabor a queso.</p>
-      <strong>$2.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">AMASIJO</span>
-      <h3>Pan de Yuca</h3>
-      <p>El clásico acompañante para una bebida caliente.</p>
-      <strong>$2.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Buñuelo</h3>
-      <p>Dorado por fuera y suave por dentro.</p>
-      <strong>$1.800</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">DULCE</span>
-      <h3>Roscón de Arequipe</h3>
-      <p>Suave, dulce y con un delicioso relleno.</p>
-      <strong>$3.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">DULCE</span>
-      <h3>Roscón de Bocadillo</h3>
-      <p>El contraste perfecto entre pan y bocadillo.</p>
-      <strong>$3.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">HOJALDRE</span>
-      <h3>Palito de Queso</h3>
-      <p>Crujiente, dorado y lleno de queso.</p>
-      <strong>$2.500</strong>
-    </article>
-
-  </div>
+<p>
+Pequeños en tamaño, enormes en sabor.
+</p>
 
 </div>
 
 
-<!-- ================= POSTRES ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">PAN PEQUEÑO</span>
+<h3>Hojaldre</h3>
+<p>Crujiente, dorado y lleno de capas.</p>
+<strong>$1.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Calentano</h3>
+<p>Pequeño, doradito y con sabor tradicional.</p>
+<strong>$1.200</strong>
+</article>
+
+<article class="product-card">
+<span class="category">PAN PEQUEÑO</span>
+<h3>Pitufo</h3>
+<p>Suave, ligero y perfecto para el desayuno.</p>
+<strong>$1.200</strong>
+</article>
+
+<article class="product-card">
+<span class="category">PAN PEQUEÑO</span>
+<h3>Rollo</h3>
+<p>Hojaldre dorado y delicado.</p>
+<strong>$1.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Blandito</h3>
+<p>Suave, esponjoso y perfecto para cualquier momento.</p>
+<strong>$1.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Mogolla</h3>
+<p>Pan de miga tierna y sabor casero.</p>
+<strong>$1.200</strong>
+</article>
+
+<article class="product-card">
+<span class="category">FAVORITO</span>
+<h3>Pan de Queso</h3>
+<p>Pequeño, calentito y lleno de queso.</p>
+<strong>$1.800</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- SABORES COLOMBIANOS -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      ALGO DULCE
-    </p>
+<p class="eyebrow">
+SABORES DE COLOMBIA
+</p>
 
-    <h3>
-      Postres
-    </h3>
+<h3>
+Los clásicos de siempre
+</h3>
 
-    <p>
-      Porque siempre hay espacio para un poquito más.
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">CHOCOLATE</span>
-      <h3>Brownie de Chocolate</h3>
-      <p>Chocolate intenso y textura suave.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">POSTRE</span>
-      <h3>Tres Leches</h3>
-      <p>Suave, cremoso y lleno de sabor.</p>
-      <strong>$5.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">POSTRE</span>
-      <h3>Cheesecake</h3>
-      <p>Cremoso y acompañado de frutos rojos.</p>
-      <strong>$6.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">HOJALDRE</span>
-      <h3>Milhoja</h3>
-      <p>Capas delicadas con un relleno cremoso.</p>
-      <strong>$5.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">ESPECIALIDAD</span>
-      <h3>Red Velvet</h3>
-      <p>Suave, cremoso y delicadamente dulce.</p>
-      <strong>$6.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">ESPECIALIDAD</span>
-      <h3>Tiramisú</h3>
-      <p>Cremoso, delicado y con sabor a café.</p>
-      <strong>$6.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">FRUTAL</span>
-      <h3>Postre de Maracuyá</h3>
-      <p>Fresco, cremoso y con el equilibrio perfecto entre dulce y ácido.</p>
-      <strong>$5.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CLÁSICO</span>
-      <h3>Torta de Zanahoria</h3>
-      <p>Bizcocho suave con especias y una crema delicada.</p>
-      <strong>$5.000</strong>
-    </article>
-
-  </div>
+<p>
+<em>Una panadería colombiana se reconoce por sus amasijos.</em>
+</p>
 
 </div>
 
 
-<!-- ================= GALLETERÍA ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">AMASIJO</span>
+<h3>Pandebono</h3>
+<p>Suave por dentro y ligeramente dorado por fuera.</p>
+<strong>$2.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">AMASIJO</span>
+<h3>Almojábana</h3>
+<p>Tradicional, suave y con mucho sabor a queso.</p>
+<strong>$2.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">AMASIJO</span>
+<h3>Pan de Yuca</h3>
+<p>El clásico acompañante para una bebida caliente.</p>
+<strong>$2.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Buñuelo</h3>
+<p>Dorado por fuera y suave por dentro.</p>
+<strong>$1.800</strong>
+</article>
+
+<article class="product-card">
+<span class="category">DULCE</span>
+<h3>Roscón de Arequipe</h3>
+<p>Suave, dulce y con un delicioso relleno.</p>
+<strong>$3.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">DULCE</span>
+<h3>Roscón de Bocadillo</h3>
+<p>El contraste perfecto entre pan y bocadillo.</p>
+<strong>$3.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">HOJALDRE</span>
+<h3>Palito de Queso</h3>
+<p>Crujiente, dorado y lleno de queso.</p>
+<strong>$2.500</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- POSTRES -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      PEQUEÑOS ANTOJOS
-    </p>
+<p class="eyebrow">
+ALGO DULCE
+</p>
 
-    <h3>
-      Galletería
-    </h3>
+<h3>
+Postres
+</h3>
 
-    <p>
-      Pequeñas, crujientes y perfectas para acompañar el café.
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">CLÁSICA</span>
-      <h3>Galleta de Chocolate</h3>
-      <p>Crujiente y con intenso sabor a chocolate.</p>
-      <strong>$2.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">FAVORITA</span>
-      <h3>Cookie con Chispas</h3>
-      <p>Suave por dentro y llena de chispas de chocolate.</p>
-      <strong>$2.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">ARTESANAL</span>
-      <h3>Galleta de Avena</h3>
-      <p>Una opción suave, casera y deliciosa.</p>
-      <strong>$2.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">DULCE</span>
-      <h3>Galleta de Coco</h3>
-      <p>Delicada, aromática y con sabor a coco.</p>
-      <strong>$2.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CLÁSICA</span>
-      <h3>Galleta de Mantequilla</h3>
-      <p>Suave, delicada y tradicional.</p>
-      <strong>$1.800</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">ESPECIALIDAD</span>
-      <h3>Alfajor de Arequipe</h3>
-      <p>Dos galletas suaves unidas por un relleno de arequipe.</p>
-      <strong>$3.000</strong>
-    </article>
-
-  </div>
+<p>
+Porque siempre hay espacio para un poquito más.
+</p>
 
 </div>
 
 
-<!-- ================= MERIENDAS ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">CHOCOLATE</span>
+<h3>Brownie de Chocolate</h3>
+<p>Chocolate intenso y textura suave.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">POSTRE</span>
+<h3>Tres Leches</h3>
+<p>Suave, cremoso y lleno de sabor.</p>
+<strong>$5.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">POSTRE</span>
+<h3>Cheesecake</h3>
+<p>Cremoso y acompañado de frutos rojos.</p>
+<strong>$6.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">HOJALDRE</span>
+<h3>Milhoja</h3>
+<p>Capas delicadas con un relleno cremoso.</p>
+<strong>$5.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">ESPECIALIDAD</span>
+<h3>Red Velvet</h3>
+<p>Suave, cremoso y delicadamente dulce.</p>
+<strong>$6.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">ESPECIALIDAD</span>
+<h3>Tiramisú</h3>
+<p>Cremoso, delicado y con sabor a café.</p>
+<strong>$6.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">FRUTAL</span>
+<h3>Postre de Maracuyá</h3>
+<p>Fresco, cremoso y equilibrado.</p>
+<strong>$5.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CLÁSICO</span>
+<h3>Torta de Zanahoria</h3>
+<p>Bizcocho suave con especias y crema.</p>
+<strong>$5.000</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- GALLETERÍA -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      PARA ESTUDIAR · COMPARTIR · DESCANSAR
-    </p>
+<p class="eyebrow">
+PEQUEÑOS ANTOJOS
+</p>
 
-    <h3>
-      Meriendas
-    </h3>
+<h3>
+Galletería
+</h3>
 
-    <p>
-      <em>Una pausa también puede saber a hogar.</em>
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card featured">
-      <span class="category">FAVORITA</span>
-      <h3>Dulce Pausa</h3>
-      <p>
-        Hojaldre<br>
-        Galleta<br>
-        Café o chocolate caliente
-      </p>
-      <strong>$7.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">PARA ESTUDIANTES</span>
-      <h3>Pausa de Chocolate</h3>
-      <p>
-        Pan de chocolate<br>
-        Cookie<br>
-        Bebida fría
-      </p>
-      <strong>$8.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Antojito Colombiano</h3>
-      <p>
-        Pandebono o buñuelo<br>
-        Postre pequeño<br>
-        Café
-      </p>
-      <strong>$7.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">COMPLETA</span>
-      <h3>Merienda Dulce Tradición</h3>
-      <p>
-        Pan pequeño<br>
-        Postre<br>
-        Galleta<br>
-        Bebida a elección
-      </p>
-      <strong>$10.000</strong>
-    </article>
-
-  </div>
+<p>
+Pequeñas, crujientes y perfectas para acompañar el café.
+</p>
 
 </div>
 
 
-<!-- ================= BEBIDAS CALIENTES ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">CLÁSICA</span>
+<h3>Galleta de Chocolate</h3>
+<p>Crujiente y con intenso sabor a chocolate.</p>
+<strong>$2.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">FAVORITA</span>
+<h3>Cookie con Chispas</h3>
+<p>Suave por dentro y llena de chispas de chocolate.</p>
+<strong>$2.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">ARTESANAL</span>
+<h3>Galleta de Avena</h3>
+<p>Una opción suave, casera y deliciosa.</p>
+<strong>$2.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">DULCE</span>
+<h3>Galleta de Coco</h3>
+<p>Delicada, aromática y con sabor a coco.</p>
+<strong>$2.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CLÁSICA</span>
+<h3>Galleta de Mantequilla</h3>
+<p>Suave, delicada y tradicional.</p>
+<strong>$1.800</strong>
+</article>
+
+<article class="product-card">
+<span class="category">ESPECIALIDAD</span>
+<h3>Alfajor de Arequipe</h3>
+<p>Galletas suaves unidas por un relleno de arequipe.</p>
+<strong>$3.000</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- MERIENDAS -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      PARA ACOMPAÑAR
-    </p>
+<p class="eyebrow">
+PARA ESTUDIAR · COMPARTIR · DESCANSAR
+</p>
 
-    <h3>
-      Bebidas calientes
-    </h3>
+<h3>
+Meriendas
+</h3>
 
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">CAFÉ</span>
-      <h3>Café Americano</h3>
-      <p>Aromático, intenso y recién preparado.</p>
-      <strong>$3.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CAFÉ</span>
-      <h3>Café con Leche</h3>
-      <p>Suave, cremoso y perfecto para acompañar el pan.</p>
-      <strong>$3.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CAFÉ</span>
-      <h3>Cappuccino</h3>
-      <p>Café, leche y espuma en una combinación delicada.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CHOCOLATE</span>
-      <h3>Chocolate Caliente</h3>
-      <p>Cremoso, caliente y reconfortante.</p>
-      <strong>$4.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Chocolate con Queso</h3>
-      <p>Una combinación colombiana que nunca falla.</p>
-      <strong>$5.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CALIENTE</span>
-      <h3>Aromática</h3>
-      <p>Una bebida ligera y reconfortante.</p>
-      <strong>$2.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">CALIENTE</span>
-      <h3>Té</h3>
-      <p>Una opción suave para cualquier momento.</p>
-      <strong>$2.500</strong>
-    </article>
-
-  </div>
+<p>
+<em>Una pausa también puede saber a hogar.</em>
+</p>
 
 </div>
 
 
-<!-- ================= BEBIDAS FRÍAS ================= -->
+<div class="menu-grid">
+
+<article class="product-card featured">
+
+<span class="category">
+FAVORITA
+</span>
+
+<h3>
+Dulce Pausa
+</h3>
+
+<p>
+Hojaldre<br>
+Galleta<br>
+Café o chocolate caliente
+</p>
+
+<strong>
+$7.500
+</strong>
+
+</article>
+
+
+<article class="product-card">
+
+<span class="category">
+PARA ESTUDIANTES
+</span>
+
+<h3>
+Pausa de Chocolate
+</h3>
+
+<p>
+Pan de chocolate<br>
+Cookie<br>
+Bebida fría
+</p>
+
+<strong>
+$8.500
+</strong>
+
+</article>
+
+
+<article class="product-card">
+
+<span class="category">
+TRADICIONAL
+</span>
+
+<h3>
+Antojito Colombiano
+</h3>
+
+<p>
+Pandebono o buñuelo<br>
+Postre pequeño<br>
+Café
+</p>
+
+<strong>
+$7.500
+</strong>
+
+</article>
+
+
+<article class="product-card">
+
+<span class="category">
+COMPLETA
+</span>
+
+<h3>
+Merienda Dulce Tradición
+</h3>
+
+<p>
+Pan pequeño<br>
+Postre<br>
+Galleta<br>
+Bebida
+</p>
+
+<strong>
+$10.000
+</strong>
+
+</article>
+
+</div>
+</div>
+
+
+<!-- BEBIDAS CALIENTES -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      ALGO FRESCO
-    </p>
+<p class="eyebrow">
+PARA ACOMPAÑAR
+</p>
 
-    <h3>
-      Bebidas frías
-    </h3>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card">
-      <span class="category">NATURAL</span>
-      <h3>Limonada Natural</h3>
-      <p>Refrescante y preparada al momento.</p>
-      <strong>$4.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">NATURAL</span>
-      <h3>Limonada de Hierbabuena</h3>
-      <p>Fresca, aromática y ligera.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">JUGO NATURAL</span>
-      <h3>Jugo de Mora</h3>
-      <p>Frutal, fresco y preparado al momento.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">JUGO NATURAL</span>
-      <h3>Jugo de Mango</h3>
-      <p>Dulce, tropical y refrescante.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">JUGO NATURAL</span>
-      <h3>Jugo de Lulo</h3>
-      <p>Refrescante y con el sabor característico del lulo.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TRADICIONAL</span>
-      <h3>Avena Casera</h3>
-      <p>Cremosa, fresca y preparada al estilo casero.</p>
-      <strong>$4.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">FRÍA</span>
-      <h3>Milo Frío</h3>
-      <p>Cremoso, frío y perfecto para una merienda.</p>
-      <strong>$5.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">FRÍA</span>
-      <h3>Chocolate Frío</h3>
-      <p>Chocolate cremoso servido bien frío.</p>
-      <strong>$5.000</strong>
-    </article>
-
-  </div>
+<h3>
+Bebidas calientes
+</h3>
 
 </div>
 
 
-<!-- ================= COMBOS ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">CAFÉ</span>
+<h3>Café Americano</h3>
+<p>Aromático, intenso y recién preparado.</p>
+<strong>$3.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CAFÉ</span>
+<h3>Café con Leche</h3>
+<p>Suave, cremoso y perfecto para acompañar el pan.</p>
+<strong>$3.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CAFÉ</span>
+<h3>Cappuccino</h3>
+<p>Café, leche y espuma.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CHOCOLATE</span>
+<h3>Chocolate Caliente</h3>
+<p>Cremoso, caliente y reconfortante.</p>
+<strong>$4.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Chocolate con Queso</h3>
+<p>Una combinación colombiana que nunca falla.</p>
+<strong>$5.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CALIENTE</span>
+<h3>Aromática</h3>
+<p>Una bebida ligera y reconfortante.</p>
+<strong>$2.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">CALIENTE</span>
+<h3>Té</h3>
+<p>Una opción suave para cualquier momento.</p>
+<strong>$2.500</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- BEBIDAS FRÍAS -->
 
 <div class="menu-category">
 
-  <div class="category-heading">
+<div class="category-heading">
 
-    <p class="eyebrow">
-      PARA COMPARTIR
-    </p>
+<p class="eyebrow">
+ALGO FRESCO
+</p>
 
-    <h3>
-      Combos Dulce Tradición
-    </h3>
-
-    <p>
-      Porque siempre hay espacio para un poquito más.
-    </p>
-
-  </div>
-
-
-  <div class="menu-grid">
-
-    <article class="product-card featured">
-      <span class="category">EL CLÁSICO</span>
-      <h3>El Clásico</h3>
-      <p>
-        Pan de queso<br>
-        Café con leche
-      </p>
-      <strong>$6.500</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">PARA DOS</span>
-      <h3>Para Dos</h3>
-      <p>
-        2 panes grandes<br>
-        2 bebidas calientes
-      </p>
-      <strong>$15.000</strong>
-    </article>
-
-    <article class="product-card">
-      <span class="category">TARDE DE ANTOJOS</span>
-      <h3>Tarde de Antojos</h3>
-      <p>
-        2 panes pequeños<br>
-        2 galletas<br>
-        2 bebidas
-      </p>
-      <strong>$12.000</strong>
-    </article>
-
-  </div>
+<h3>
+Bebidas frías
+</h3>
 
 </div>
 
 
-<!-- ================= CIERRE MENÚ ================= -->
+<div class="menu-grid">
+
+<article class="product-card">
+<span class="category">NATURAL</span>
+<h3>Limonada Natural</h3>
+<p>Refrescante y preparada al momento.</p>
+<strong>$4.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">NATURAL</span>
+<h3>Limonada de Hierbabuena</h3>
+<p>Fresca, aromática y ligera.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">JUGO NATURAL</span>
+<h3>Jugo de Mora</h3>
+<p>Frutal, fresco y preparado al momento.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">JUGO NATURAL</span>
+<h3>Jugo de Mango</h3>
+<p>Dulce, tropical y refrescante.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">JUGO NATURAL</span>
+<h3>Jugo de Lulo</h3>
+<p>Refrescante y con sabor colombiano.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">TRADICIONAL</span>
+<h3>Avena Casera</h3>
+<p>Cremosa, fresca y preparada al estilo casero.</p>
+<strong>$4.500</strong>
+</article>
+
+<article class="product-card">
+<span class="category">FRÍA</span>
+<h3>Milo Frío</h3>
+<p>Cremoso, frío y perfecto para una merienda.</p>
+<strong>$5.000</strong>
+</article>
+
+<article class="product-card">
+<span class="category">FRÍA</span>
+<h3>Chocolate Frío</h3>
+<p>Chocolate cremoso servido bien frío.</p>
+<strong>$5.000</strong>
+</article>
+
+</div>
+</div>
+
+
+<!-- COMBOS -->
+
+<div class="menu-category">
+
+<div class="category-heading">
+
+<p class="eyebrow">
+PARA COMPARTIR
+</p>
+
+<h3>
+Combos Dulce Tradición
+</h3>
+
+<p>
+Porque siempre hay espacio para un poquito más.
+</p>
+
+</div>
+
+
+<div class="menu-grid">
+
+<article class="product-card featured">
+
+<span class="category">
+EL CLÁSICO
+</span>
+
+<h3>
+El Clásico
+</h3>
+
+<p>
+Pan de queso<br>
+Café con leche
+</p>
+
+<strong>
+$6.500
+</strong>
+
+</article>
+
+
+<article class="product-card">
+
+<span class="category">
+PARA DOS
+</span>
+
+<h3>
+Para Dos
+</h3>
+
+<p>
+2 panes grandes<br>
+2 bebidas calientes
+</p>
+
+<strong>
+$15.000
+</strong>
+
+</article>
+
+
+<article class="product-card">
+
+<span class="category">
+TARDE DE ANTOJOS
+</span>
+
+<h3>
+Tarde de Antojos
+</h3>
+
+<p>
+2 panes pequeños<br>
+2 galletas<br>
+2 bebidas
+</p>
+
+<strong>
+$12.000
+</strong>
+
+</article>
+
+</div>
+</div>
+
 
 <div class="menu-ending">
 
-  <h3>
-    Porque la felicidad
-    <em>se comparte.</em>
-  </h3>
+<h3>
+Porque la felicidad
+<em>se comparte.</em>
+</h3>
 
-  <p>
-    DULCE TRADICIÓN
-    <br>
-    <small>con sabor a hogar</small>
-  </p>
+<p>
+DULCE TRADICIÓN
+<br>
+con sabor a hogar
+</p>
 
 </div>
 
@@ -899,51 +1749,51 @@
 
 <section id="experiencia" class="experience">
 
-  <div class="experience-content reveal">
+<div class="experience-content">
 
-    <p class="eyebrow">
-      MÁS QUE UNA PANADERÍA
-    </p>
+<p class="eyebrow">
+MÁS QUE UNA PANADERÍA
+</p>
 
-    <h2>
-      Un lugar para quedarse
-      <br>
-      <em>un ratito más.</em>
-    </h2>
+<h2>
+Un lugar para quedarse
+<br>
+<em>un ratito más.</em>
+</h2>
 
-    <p>
-      Queremos que Dulce Tradición sea ese lugar
-      al que entras por un pan y terminas quedándote
-      por el ambiente, el aroma y la sensación
-      de estar en casa.
-    </p>
+<p>
+Queremos que Dulce Tradición sea ese lugar
+al que entras por un pan y terminas quedándote
+por el ambiente, el aroma y la sensación
+de estar en casa.
+</p>
 
-  </div>
+</div>
 
 
-  <div class="experience-stats reveal">
+<div class="experience-stats">
 
-    <div>
-      <strong>01</strong>
-      <span>Productos frescos</span>
-    </div>
+<div>
+<strong>01</strong>
+<span>Productos frescos</span>
+</div>
 
-    <div>
-      <strong>02</strong>
-      <span>Atención cercana</span>
-    </div>
+<div>
+<strong>02</strong>
+<span>Atención cercana</span>
+</div>
 
-    <div>
-      <strong>03</strong>
-      <span>Ambiente acogedor</span>
-    </div>
+<div>
+<strong>03</strong>
+<span>Ambiente acogedor</span>
+</div>
 
-    <div>
-      <strong>04</strong>
-      <span>Tradición e innovación</span>
-    </div>
+<div>
+<strong>04</strong>
+<span>Tradición e innovación</span>
+</div>
 
-  </div>
+</div>
 
 </section>
 
@@ -952,65 +1802,65 @@
 
 <section id="proyecto" class="section survey">
 
-  <div class="section-heading reveal">
+<div class="section-heading">
 
-    <p class="eyebrow">
-      NUESTRO PROYECTO
-    </p>
+<p class="eyebrow">
+NUESTRO PROYECTO
+</p>
 
-    <h2>
-      Escuchamos a nuestros
-      <em>clientes.</em>
-    </h2>
+<h2>
+Escuchamos a nuestros
+<em>clientes.</em>
+</h2>
 
-    <p>
-      La propuesta de Dulce Tradición parte de un
-      estudio de mercado en el que identificamos
-      lo que las personas buscan en una panadería.
-    </p>
+<p>
+La propuesta de Dulce Tradición parte de un
+estudio de mercado en el que identificamos
+lo que las personas buscan en una panadería.
+</p>
 
-  </div>
+</div>
 
 
-  <div class="insights">
+<div class="insights">
 
-    <div class="insight reveal">
-      <span>01</span>
-      <h3>Variedad</h3>
-      <p>
-        Un menú amplio con productos tradicionales
-        y opciones innovadoras.
-      </p>
-    </div>
+<div class="insight">
+<span>01</span>
+<h3>Variedad</h3>
+<p>
+Un menú amplio con productos tradicionales
+y opciones innovadoras.
+</p>
+</div>
 
-    <div class="insight reveal">
-      <span>02</span>
-      <h3>Horarios flexibles</h3>
-      <p>
-        Una panadería pensada para diferentes
-        momentos del día.
-      </p>
-    </div>
+<div class="insight">
+<span>02</span>
+<h3>Horarios flexibles</h3>
+<p>
+Una panadería pensada para diferentes
+momentos del día.
+</p>
+</div>
 
-    <div class="insight reveal">
-      <span>03</span>
-      <h3>Buena atención</h3>
-      <p>
-        Servicio amable, cercano y enfocado
-        en la experiencia.
-      </p>
-    </div>
+<div class="insight">
+<span>03</span>
+<h3>Buena atención</h3>
+<p>
+Servicio amable, cercano y enfocado
+en la experiencia.
+</p>
+</div>
 
-    <div class="insight reveal">
-      <span>04</span>
-      <h3>Ambiente especial</h3>
-      <p>
-        Un espacio agradable para compartir
-        con familia y amigos.
-      </p>
-    </div>
+<div class="insight">
+<span>04</span>
+<h3>Ambiente especial</h3>
+<p>
+Un espacio agradable para compartir
+con familia y amigos.
+</p>
+</div>
 
-  </div>
+</div>
 
 </section>
 
@@ -1019,19 +1869,19 @@
 
 <section class="quote">
 
-  <div class="quote-mark">
-    “
-  </div>
+<div class="quote-mark">
+“
+</div>
 
-  <blockquote>
-    Hay sabores que alimentan el cuerpo,
-    <br>
-    y otros que alimentan los recuerdos.
-  </blockquote>
+<blockquote>
+Hay sabores que alimentan el cuerpo,
+<br>
+y otros que alimentan los recuerdos.
+</blockquote>
 
-  <p>
-    DULCE TRADICIÓN
-  </p>
+<p>
+DULCE TRADICIÓN
+</p>
 
 </section>
 
@@ -1042,61 +1892,61 @@
 
 <footer id="contacto" class="footer">
 
-  <div>
+<div>
 
-    <a href="#inicio" class="logo">
-      Dulce <span>Tradición</span>
-    </a>
+<a href="#inicio" class="logo">
+Dulce <span>Tradición</span>
+</a>
 
-    <p>
-      Panadería artesanal con sabor a hogar.
-    </p>
+<p>
+Panadería artesanal con sabor a hogar.
+</p>
 
-  </div>
-
-
-  <div class="footer-links">
-
-    <h4>
-      VISÍTANOS
-    </h4>
-
-    <p>
-      Bogotá, Colombia
-    </p>
-
-    <p>
-      Lun — Sáb · 7:00 AM — 9:00 PM
-    </p>
-
-  </div>
+</div>
 
 
-  <div class="footer-links">
+<div class="footer-links">
 
-    <h4>
-      CONTACTO
-    </h4>
+<h4>
+VISÍTANOS
+</h4>
 
-    <p>
-      dulcetradición@gmail.com
-    </p>
+<p>
+Bogotá, Colombia
+</p>
 
-    <p>
-      Instagram · WhatsApp
-    </p>
+<p>
+Lun — Sáb · 7:00 AM — 9:00 PM
+</p>
 
-  </div>
+</div>
 
 
-  <div class="footer-bottom">
-    © 2026 Dulce Tradición · Proyecto académico
-  </div>
+<div class="footer-links">
+
+<h4>
+CONTACTO
+</h4>
+
+<p>
+dulcetradicion@gmail.com
+</p>
+
+<p>
+Instagram · WhatsApp 3115033240 
+</p>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Dulce Tradición · Proyecto académico 
+
+</div>
 
 </footer>
 
-
-<script src="script.js"></script>
 
 </body>
 </html>
