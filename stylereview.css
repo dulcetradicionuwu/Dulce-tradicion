@@ -1,17 +1,30 @@
-/* =========================
+/* =====================================================
    DULCE TRADICIÓN
-   ESTILO PRINCIPAL
-========================= */
+   PANADERÍA ARTESANAL
+   ESTILO: ELEGANTE · CÁLIDO · TRADICIONAL
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 :root {
-  --cream: #f8f3ea;
-  --cream-dark: #eee4d4;
-  --brown: #4b3024;
-  --brown-light: #765544;
-  --gold: #b8955b;
-  --white: #fffdf9;
-  --text: #3e3029;
+  --crema: #f7f1e7;
+  --crema-clara: #fffdf9;
+  --cafe: #4a3025;
+  --cafe-claro: #74594a;
+  --dorado: #b6945a;
+  --beige: #e9ddcc;
+  --blanco: #ffffff;
 }
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 * {
   margin: 0;
@@ -24,245 +37,291 @@ html {
 }
 
 body {
+  background: var(--crema);
+  color: var(--cafe);
+
   font-family: "Montserrat", sans-serif;
-  background: var(--cream);
-  color: var(--text);
+
   line-height: 1.7;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 h1,
 h2,
 h3,
 .logo,
-.signature {
+.signature,
+blockquote {
   font-family: "Cormorant Garamond", serif;
 }
 
 em {
-  color: var(--gold);
+  color: var(--dorado);
   font-style: italic;
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
+
+  width: 100%;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  padding: 20px 7%;
+  padding: 20px 8%;
 
-  background: rgba(248, 243, 234, 0.96);
-  border-bottom: 1px solid rgba(184, 149, 91, 0.25);
+  background: rgba(247, 241, 231, 0.97);
+
+  border-bottom: 1px solid rgba(182, 148, 90, 0.25);
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
-  color: var(--brown);
+
+  color: var(--cafe);
 }
 
 .logo span {
-  color: var(--gold);
+  color: var(--dorado);
 }
 
 .nav {
   display: flex;
-  gap: 28px;
+  gap: 30px;
 }
 
 .nav a {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 1px;
+
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+
   transition: 0.3s;
 }
 
 .nav a:hover {
-  color: var(--gold);
+  color: var(--dorado);
 }
 
 .menu-toggle {
   display: none;
-  border: 1px solid var(--brown);
+
+  padding: 8px 15px;
+
   background: transparent;
-  padding: 8px 14px;
+
+  border: 1px solid var(--cafe);
+
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+
+  font-size: 10px;
   letter-spacing: 1px;
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
-  min-height: 82vh;
+  min-height: 85vh;
 
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
+
   align-items: center;
 
-  gap: 50px;
+  gap: 70px;
+
   padding: 90px 9%;
 
   background:
     linear-gradient(
       135deg,
-      #f8f3ea 0%,
-      #eee3d3 100%
+      #f7f1e7 0%,
+      #eee1cf 100%
     );
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 720px;
 }
 
 .eyebrow {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 
-  font-size: 11px;
+  color: var(--dorado);
+
+  font-size: 10px;
   font-weight: 600;
+
   letter-spacing: 3px;
-  color: var(--gold);
 }
 
 .hero h1 {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
-  font-size: clamp(55px, 7vw, 95px);
-  line-height: 0.95;
-  color: var(--brown);
+  color: var(--cafe);
+
+  font-size: clamp(60px, 7vw, 100px);
+
+  line-height: 0.9;
 }
 
 .hero-text {
   max-width: 570px;
+
   margin-bottom: 35px;
 
-  font-size: 15px;
-  color: var(--brown-light);
+  color: var(--cafe-claro);
+
+  font-size: 14px;
 }
 
 .hero-buttons {
   display: flex;
   gap: 15px;
+
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
 
-  padding: 13px 24px;
+  padding: 14px 25px;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 1px;
+
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 
   transition: 0.3s;
 }
 
 .btn-primary {
-  background: var(--brown);
-  color: white;
+  background: var(--cafe);
+
+  color: var(--blanco);
 }
 
 .btn-primary:hover {
-  background: var(--gold);
+  background: var(--dorado);
 }
 
 .btn-outline {
-  border: 1px solid var(--brown);
+  border: 1px solid var(--cafe);
 }
 
 .btn-outline:hover {
-  background: var(--brown);
-  color: white;
+  background: var(--cafe);
+
+  color: var(--blanco);
 }
 
+
+/* =====================================================
+   HERO CARD
+===================================================== */
+
 .hero-card {
-  min-height: 330px;
+  min-height: 370px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
 
   text-align: center;
 
-  border: 1px solid rgba(184, 149, 91, 0.5);
+  border: 1px solid rgba(182, 148, 90, 0.55);
 
   background:
     radial-gradient(
       circle,
-      rgba(184, 149, 91, 0.18),
-      transparent 60%
+      rgba(182, 148, 90, 0.16),
+      transparent 65%
     );
 }
 
 .hero-card span {
-  font-size: 11px;
+  color: var(--dorado);
+
+  font-size: 10px;
+  font-weight: 600;
+
   letter-spacing: 3px;
-  color: var(--gold);
 }
 
 .hero-card strong {
-  margin-top: 10px;
+  margin-top: 12px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
-  color: var(--brown);
+
+  font-size: 42px;
+
+  color: var(--cafe);
 }
 
 
-/* =========================
+/* =====================================================
    MARQUEE
-========================= */
+===================================================== */
 
 .marquee {
+  padding: 17px;
+
   overflow: hidden;
 
-  padding: 18px;
+  background: var(--cafe);
 
-  background: var(--brown);
-  color: var(--cream);
+  color: var(--crema);
 
   text-align: center;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
+
   letter-spacing: 3px;
 }
 
 
-/* =========================
+/* =====================================================
    SECCIONES
-========================= */
+===================================================== */
 
 .section {
-  padding: 100px 9%;
+  padding: 110px 9%;
 }
 
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+
   align-items: center;
+
+  gap: 80px;
 }
+
+
+/* =====================================================
+   BLOQUE "NOSOTROS"
+===================================================== */
 
 .section-image {
   position: relative;
@@ -272,394 +331,468 @@ em {
   min-height: 430px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   text-align: center;
 
-  border: 1px solid rgba(184, 149, 91, 0.5);
+  background: var(--beige);
 
-  background: var(--cream-dark);
+  border: 1px solid rgba(182, 148, 90, 0.45);
+
+  color: var(--cafe);
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
-  color: var(--brown);
+
+  font-size: 44px;
+
   letter-spacing: 3px;
 }
 
 .stamp {
   position: absolute;
+
   right: -20px;
   bottom: -20px;
 
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   text-align: center;
 
   border-radius: 50%;
-  border: 1px solid var(--gold);
 
-  background: var(--cream);
+  border: 1px solid var(--dorado);
+
+  background: var(--crema);
+
+  color: var(--dorado);
 
   font-size: 9px;
+
   letter-spacing: 2px;
-  color: var(--gold);
 }
 
 .section-copy h2,
 .section-heading h2 {
   margin-bottom: 25px;
 
-  font-size: clamp(45px, 5vw, 70px);
-  line-height: 1;
-  color: var(--brown);
+  color: var(--cafe);
+
+  font-size: clamp(48px, 5vw, 70px);
+
+  line-height: 0.95;
 }
 
 .section-copy p {
+  max-width: 620px;
+
   margin-bottom: 20px;
-  max-width: 600px;
+
+  color: var(--cafe-claro);
+
+  font-size: 14px;
 }
 
 .signature {
   margin-top: 35px;
 
-  font-size: 28px;
-  color: var(--brown);
+  color: var(--cafe);
+
+  font-size: 30px;
 }
 
 .signature small {
   display: block;
 
+  margin-top: 3px;
+
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  color: var(--gold);
+
+  color: var(--dorado);
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
 }
 
 
-/* =========================
+/* =====================================================
    MENÚ
-========================= */
+===================================================== */
 
 .menu-section {
-  background: var(--white);
+  background: var(--crema-clara);
 }
 
 .section-heading {
-  max-width: 700px;
-  margin: 0 auto 70px;
+  max-width: 720px;
+
+  margin: 0 auto 80px;
+
   text-align: center;
 }
 
 .section-heading > p:last-child {
-  color: var(--brown-light);
+  color: var(--cafe-claro);
+
+  font-size: 14px;
 }
 
-
-/* CATEGORÍAS */
-
 .menu-category {
-  margin-bottom: 90px;
+  margin-bottom: 100px;
 }
 
 .category-heading {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
+
   text-align: center;
 }
 
 .category-heading h3 {
   margin-bottom: 5px;
 
-  font-size: 45px;
-  color: var(--brown);
+  color: var(--cafe);
+
+  font-size: 48px;
 }
 
 .category-heading p:last-child {
-  color: var(--brown-light);
-  font-size: 14px;
+  color: var(--cafe-claro);
+
+  font-size: 13px;
 }
 
 
-/* GRID */
+/* =====================================================
+   PRODUCTOS
+===================================================== */
 
 .menu-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 20px;
 }
 
-
-/* PRODUCTOS */
-
 .product-card {
-  min-height: 240px;
+  min-height: 245px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 28px;
+  padding: 27px;
 
-  border: 1px solid rgba(184, 149, 91, 0.28);
+  background: var(--crema);
 
-  background: var(--cream);
+  border: 1px solid rgba(182, 148, 90, 0.25);
 
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    border 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+
+  border-color: var(--dorado);
 
   box-shadow:
-    0 15px 35px rgba(75, 48, 36, 0.08);
+    0 15px 35px rgba(74, 48, 37, 0.09);
 }
 
 .product-card.featured {
-  border-color: var(--gold);
+  border: 1px solid var(--dorado);
 }
 
 .product-card .category {
-  margin-bottom: 12px;
+  margin-bottom: 13px;
+
+  color: var(--dorado);
 
   font-size: 9px;
   font-weight: 600;
-  letter-spacing: 2px;
 
-  color: var(--gold);
+  letter-spacing: 2px;
 }
 
 .product-card h3 {
   margin-bottom: 10px;
 
-  font-size: 28px;
-  line-height: 1;
+  color: var(--cafe);
 
-  color: var(--brown);
+  font-size: 28px;
+
+  line-height: 1;
 }
 
 .product-card p {
   flex: 1;
 
+  color: var(--cafe-claro);
+
   font-size: 12px;
-  color: var(--brown-light);
 }
 
 .product-card strong {
   margin-top: 20px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
+  color: var(--cafe);
 
-  color: var(--brown);
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
 }
 
 
-/* =========================
+/* =====================================================
    FINAL DEL MENÚ
-========================= */
+===================================================== */
 
 .menu-ending {
-  padding: 70px 20px;
+  padding: 75px 20px;
 
   text-align: center;
 
-  border-top: 1px solid rgba(184, 149, 91, 0.3);
+  border-top: 1px solid rgba(182, 148, 90, 0.35);
 }
 
 .menu-ending h3 {
-  font-size: 48px;
-  color: var(--brown);
+  color: var(--cafe);
+
+  font-size: 50px;
+
+  line-height: 1;
 }
 
 .menu-ending p {
-  margin-top: 20px;
+  margin-top: 25px;
 
-  font-size: 11px;
+  color: var(--dorado);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
   letter-spacing: 3px;
-
-  color: var(--gold);
 }
 
 .menu-ending small {
   font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
   letter-spacing: 1px;
 }
 
 
-/* =========================
+/* =====================================================
    EXPERIENCIA
-========================= */
+===================================================== */
 
 .experience {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 80px;
 
-  padding: 100px 9%;
+  padding: 110px 9%;
 
-  background: var(--brown);
-  color: var(--cream);
+  background: var(--cafe);
+
+  color: var(--crema);
 }
 
 .experience h2 {
   margin-bottom: 25px;
 
-  font-size: clamp(45px, 5vw, 70px);
-  line-height: 1;
+  color: var(--crema);
+
+  font-size: clamp(48px, 5vw, 70px);
+
+  line-height: 0.95;
 }
 
 .experience h2 em {
-  color: #d1b477;
+  color: #d0b274;
 }
 
 .experience-content p:last-child {
   max-width: 600px;
-  color: #ddd0c3;
+
+  color: #d8ccc0;
+
+  font-size: 14px;
 }
 
 .experience-stats {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 20px;
 }
 
 .experience-stats div {
   padding: 30px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .experience-stats strong {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+
+  color: #d0b274;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
-  color: #d1b477;
+
+  font-size: 42px;
 }
 
 .experience-stats span {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 
-/* =========================
+/* =====================================================
    PROYECTO
-========================= */
+===================================================== */
 
 .survey {
-  background: var(--cream);
+  background: var(--crema);
 }
 
 .insights {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 25px;
 }
 
 .insight {
   padding: 30px;
 
-  border-top: 2px solid var(--gold);
-  background: var(--white);
+  background: var(--crema-clara);
+
+  border-top: 2px solid var(--dorado);
 }
 
 .insight > span {
+  color: var(--dorado);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 30px;
-  color: var(--gold);
 }
 
 .insight h3 {
   margin: 15px 0 10px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
+  color: var(--cafe);
 
-  color: var(--brown);
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
 }
 
 .insight p {
+  color: var(--cafe-claro);
+
   font-size: 12px;
-  color: var(--brown-light);
 }
 
 
-/* =========================
+/* =====================================================
    FRASE FINAL
-========================= */
+===================================================== */
 
 .quote {
   padding: 120px 9%;
 
   text-align: center;
 
-  background: var(--white);
+  background: var(--crema-clara);
 }
 
 .quote-mark {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 80px;
-  line-height: 0.5;
+  color: var(--dorado);
 
-  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 85px;
+
+  line-height: 0.5;
 }
 
 blockquote {
-  margin: 25px auto;
-
   max-width: 900px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(35px, 5vw, 60px);
-  line-height: 1.1;
+  margin: 30px auto;
 
-  color: var(--brown);
+  color: var(--cafe);
+
+  font-size: clamp(35px, 5vw, 60px);
+
+  line-height: 1.05;
 }
 
 .quote p {
+  color: var(--dorado);
+
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 4px;
-  color: var(--gold);
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer {
   display: grid;
+
   grid-template-columns: 2fr 1fr 1fr;
+
   gap: 50px;
 
   padding: 70px 9% 30px;
 
   background: #302119;
-  color: var(--cream);
+
+  color: var(--crema);
 }
 
 .footer .logo {
-  color: var(--cream);
+  color: var(--crema);
 }
 
 .footer p {
   margin-top: 10px;
-  font-size: 12px;
-  color: #cfc1b5;
+
+  color: #cbbeb2;
+
+  font-size: 11px;
 }
 
 .footer-links h4 {
-  font-size: 10px;
+  color: var(--dorado);
+
+  font-size: 9px;
+
   letter-spacing: 2px;
-  color: var(--gold);
 }
 
 .footer-bottom {
@@ -669,22 +802,23 @@ blockquote {
 
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 
+  color: #a99c92;
+
   text-align: center;
 
-  font-size: 10px;
-  color: #a99b90;
+  font-size: 9px;
 }
 
 
-/* =========================
-   ANIMACIONES
-========================= */
+/* =====================================================
+   ANIMACIÓN
+===================================================== */
 
 .reveal {
-  animation: reveal 0.8s ease both;
+  animation: aparecer 0.8s ease both;
 }
 
-@keyframes reveal {
+@keyframes aparecer {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -697,11 +831,11 @@ blockquote {
 }
 
 
-/* =========================
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -723,36 +857,44 @@ blockquote {
 }
 
 
-/* =========================
+/* =====================================================
    CELULAR
-========================= */
+===================================================== */
 
 @media (max-width: 700px) {
 
   .header {
-    padding: 18px 5%;
+    padding: 17px 5%;
   }
 
   .logo {
     font-size: 25px;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
   .nav {
     display: none;
   }
 
-  .hero,
-  .section,
-  .experience {
-    padding: 70px 6%;
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding: 75px 6%;
   }
 
   .hero h1 {
-    font-size: 55px;
+    font-size: 58px;
+  }
+
+  .hero-card {
+    min-height: 250px;
+  }
+
+  .section {
+    padding: 80px 6%;
   }
 
   .menu-grid {
@@ -763,12 +905,17 @@ blockquote {
     grid-template-columns: 1fr;
   }
 
+  .experience {
+    padding: 80px 6%;
+  }
+
   .experience-stats {
     grid-template-columns: 1fr;
   }
 
   .footer {
     grid-template-columns: 1fr;
+
     padding: 60px 6% 30px;
   }
 
@@ -778,6 +925,10 @@ blockquote {
 
   .image-placeholder {
     min-height: 300px;
+  }
+
+  .stamp {
+    right: 10px;
   }
 
 }
