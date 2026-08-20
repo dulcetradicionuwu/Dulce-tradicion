@@ -1,15 +1,9 @@
 /* =====================================================
    DULCE TRADICIÓN
    PANADERÍA ARTESANAL
-   ESTILO: ELEGANTE · CÁLIDO · TRADICIONAL
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
 
 :root {
   --crema: #f7f1e7;
@@ -20,11 +14,6 @@
   --beige: #e9ddcc;
   --blanco: #ffffff;
 }
-
-
-/* =====================================================
-   GENERAL
-===================================================== */
 
 * {
   margin: 0;
@@ -39,9 +28,7 @@ html {
 body {
   background: var(--crema);
   color: var(--cafe);
-
   font-family: "Montserrat", sans-serif;
-
   line-height: 1.7;
 }
 
@@ -64,34 +51,26 @@ em {
   font-style: italic;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* ================= HEADER ================= */
 
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
-
-  width: 100%;
+  z-index: 1000;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 8%;
+  padding: 18px 8%;
 
   background: rgba(247, 241, 231, 0.97);
-
-  border-bottom: 1px solid rgba(182, 148, 90, 0.25);
+  border-bottom: 1px solid rgba(182, 148, 90, 0.3);
 }
 
 .logo {
   font-size: 32px;
   font-weight: 700;
-
-  color: var(--cafe);
 }
 
 .logo span {
@@ -100,16 +79,14 @@ em {
 
 .nav {
   display: flex;
-  gap: 30px;
+  gap: 28px;
 }
 
 .nav a {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
   transition: 0.3s;
 }
 
@@ -119,34 +96,18 @@ em {
 
 .menu-toggle {
   display: none;
-
-  padding: 8px 15px;
-
-  background: transparent;
-
-  border: 1px solid var(--cafe);
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 10px;
-  letter-spacing: 1px;
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* ================= HERO ================= */
 
 .hero {
   min-height: 85vh;
 
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-
   align-items: center;
 
   gap: 70px;
-
   padding: 90px 9%;
 
   background:
@@ -168,34 +129,27 @@ em {
 
   font-size: 10px;
   font-weight: 600;
-
   letter-spacing: 3px;
 }
 
 .hero h1 {
-  margin-bottom: 30px;
-
-  color: var(--cafe);
+  margin-bottom: 28px;
 
   font-size: clamp(60px, 7vw, 100px);
-
   line-height: 0.9;
 }
 
 .hero-text {
   max-width: 570px;
-
   margin-bottom: 35px;
 
   color: var(--cafe-claro);
-
   font-size: 14px;
 }
 
 .hero-buttons {
   display: flex;
   gap: 15px;
-
   flex-wrap: wrap;
 }
 
@@ -206,7 +160,6 @@ em {
 
   font-size: 10px;
   font-weight: 600;
-
   letter-spacing: 1.5px;
   text-transform: uppercase;
 
@@ -215,7 +168,6 @@ em {
 
 .btn-primary {
   background: var(--cafe);
-
   color: var(--blanco);
 }
 
@@ -229,21 +181,16 @@ em {
 
 .btn-outline:hover {
   background: var(--cafe);
-
   color: var(--blanco);
 }
 
-
-/* =====================================================
-   HERO CARD
-===================================================== */
+/* ================= HERO DECORACIÓN ================= */
 
 .hero-card {
   min-height: 370px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
@@ -254,9 +201,59 @@ em {
   background:
     radial-gradient(
       circle,
-      rgba(182, 148, 90, 0.16),
+      rgba(182, 148, 90, 0.15),
       transparent 65%
     );
+}
+
+/* IMPORTANTE:
+   Eliminamos cualquier emoji del diseño */
+
+.bread-illustration {
+  width: 150px;
+  height: 150px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: transparent;
+  font-size: 0;
+
+  position: relative;
+}
+
+.bread-illustration::before {
+  content: "";
+  width: 70px;
+  height: 45px;
+
+  border: 2px solid var(--dorado);
+  border-radius: 50% 50% 45% 45%;
+
+  transform: rotate(-8deg);
+}
+
+.bread-illustration::after {
+  content: "";
+
+  position: absolute;
+
+  width: 35px;
+  height: 2px;
+
+  background: var(--dorado);
+
+  transform: rotate(-25deg);
+
+  box-shadow:
+    18px 10px 0 var(--dorado),
+    -8px 15px 0 var(--dorado);
 }
 
 .hero-card span {
@@ -264,50 +261,38 @@ em {
 
   font-size: 10px;
   font-weight: 600;
-
   letter-spacing: 3px;
 }
 
 .hero-card strong {
-  margin-top: 12px;
+  margin-top: 10px;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: 42px;
-
-  color: var(--cafe);
 }
 
-
-/* =====================================================
-   MARQUEE
-===================================================== */
+/* ================= MARQUEE ================= */
 
 .marquee {
   padding: 17px;
 
-  overflow: hidden;
-
   background: var(--cafe);
-
   color: var(--crema);
 
   text-align: center;
 
   font-size: 10px;
   font-weight: 600;
-
   letter-spacing: 3px;
 }
 
-
-/* =====================================================
-   SECCIONES
-===================================================== */
+/* ================= SECCIONES ================= */
 
 .section {
   padding: 110px 9%;
 }
+
+/* ================= NOSOTROS ================= */
 
 .about {
   display: grid;
@@ -318,11 +303,6 @@ em {
   gap: 80px;
 }
 
-
-/* =====================================================
-   BLOQUE "NOSOTROS"
-===================================================== */
-
 .section-image {
   position: relative;
 }
@@ -330,23 +310,46 @@ em {
 .image-placeholder {
   min-height: 430px;
 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  text-align: center;
-
-  background: var(--beige);
+  background:
+    linear-gradient(
+      135deg,
+      #e9ddcc,
+      #f7f1e7
+    );
 
   border: 1px solid rgba(182, 148, 90, 0.45);
 
-  color: var(--cafe);
+  font-size: 0;
+}
+
+/* Decoración elegante en lugar del emoji */
+
+.image-placeholder::before {
+  content: "";
+
+  width: 180px;
+  height: 180px;
+
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+}
+
+.image-placeholder::after {
+  content: "DULCE TRADICIÓN";
+
+  position: absolute;
+
+  color: var(--dorado);
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 44px;
-
-  letter-spacing: 3px;
+  font-size: 20px;
+  letter-spacing: 4px;
 }
 
 .stamp {
@@ -365,7 +368,6 @@ em {
   text-align: center;
 
   border-radius: 50%;
-
   border: 1px solid var(--dorado);
 
   background: var(--crema);
@@ -373,7 +375,6 @@ em {
   color: var(--dorado);
 
   font-size: 9px;
-
   letter-spacing: 2px;
 }
 
@@ -381,10 +382,7 @@ em {
 .section-heading h2 {
   margin-bottom: 25px;
 
-  color: var(--cafe);
-
   font-size: clamp(48px, 5vw, 70px);
-
   line-height: 0.95;
 }
 
@@ -394,14 +392,11 @@ em {
   margin-bottom: 20px;
 
   color: var(--cafe-claro);
-
   font-size: 14px;
 }
 
 .signature {
   margin-top: 35px;
-
-  color: var(--cafe);
 
   font-size: 30px;
 }
@@ -416,14 +411,10 @@ em {
   color: var(--dorado);
 
   font-size: 9px;
-
   letter-spacing: 1px;
 }
 
-
-/* =====================================================
-   MENÚ
-===================================================== */
+/* ================= MENÚ ================= */
 
 .menu-section {
   background: var(--crema-clara);
@@ -432,70 +423,39 @@ em {
 .section-heading {
   max-width: 720px;
 
-  margin: 0 auto 80px;
+  margin: 0 auto 65px;
 
   text-align: center;
 }
 
 .section-heading > p:last-child {
   color: var(--cafe-claro);
-
   font-size: 14px;
 }
 
-.menu-category {
-  margin-bottom: 100px;
-}
-
-.category-heading {
-  margin-bottom: 40px;
-
-  text-align: center;
-}
-
-.category-heading h3 {
-  margin-bottom: 5px;
-
-  color: var(--cafe);
-
-  font-size: 48px;
-}
-
-.category-heading p:last-child {
-  color: var(--cafe-claro);
-
-  font-size: 13px;
-}
-
-
-/* =====================================================
-   PRODUCTOS
-===================================================== */
+/* ================= TARJETAS ================= */
 
 .menu-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 22px;
 }
 
 .product-card {
-  min-height: 245px;
+  min-height: 240px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 27px;
+  padding: 30px;
 
   background: var(--crema);
 
-  border: 1px solid rgba(182, 148, 90, 0.25);
+  border: 1px solid rgba(182, 148, 90, 0.28);
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border 0.3s ease;
+  transition: 0.3s;
 }
 
 .product-card:hover {
@@ -511,24 +471,49 @@ em {
   border: 1px solid var(--dorado);
 }
 
+.product-icon {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+
+  font-size: 0;
+
+  position: relative;
+}
+
+.product-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+
+  top: 12px;
+  left: 12px;
+
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+}
+
 .product-card .category {
-  margin-bottom: 13px;
+  margin-bottom: 10px;
 
   color: var(--dorado);
 
   font-size: 9px;
   font-weight: 600;
-
   letter-spacing: 2px;
 }
 
 .product-card h3 {
   margin-bottom: 10px;
 
-  color: var(--cafe);
-
   font-size: 28px;
-
   line-height: 1;
 }
 
@@ -536,65 +521,18 @@ em {
   flex: 1;
 
   color: var(--cafe-claro);
-
   font-size: 12px;
 }
 
 .product-card strong {
   margin-top: 20px;
 
-  color: var(--cafe);
-
   font-family: "Cormorant Garamond", serif;
 
   font-size: 25px;
 }
 
-
-/* =====================================================
-   FINAL DEL MENÚ
-===================================================== */
-
-.menu-ending {
-  padding: 75px 20px;
-
-  text-align: center;
-
-  border-top: 1px solid rgba(182, 148, 90, 0.35);
-}
-
-.menu-ending h3 {
-  color: var(--cafe);
-
-  font-size: 50px;
-
-  line-height: 1;
-}
-
-.menu-ending p {
-  margin-top: 25px;
-
-  color: var(--dorado);
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 3px;
-}
-
-.menu-ending small {
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 9px;
-
-  letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   EXPERIENCIA
-===================================================== */
+/* ================= EXPERIENCIA ================= */
 
 .experience {
   display: grid;
@@ -643,7 +581,7 @@ em {
 .experience-stats div {
   padding: 30px;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255,255,255,0.18);
 }
 
 .experience-stats strong {
@@ -658,14 +596,7 @@ em {
   font-size: 42px;
 }
 
-.experience-stats span {
-  font-size: 11px;
-}
-
-
-/* =====================================================
-   PROYECTO
-===================================================== */
+/* ================= PROYECTO ================= */
 
 .survey {
   background: var(--crema);
@@ -698,8 +629,6 @@ em {
 .insight h3 {
   margin: 15px 0 10px;
 
-  color: var(--cafe);
-
   font-family: "Cormorant Garamond", serif;
 
   font-size: 30px;
@@ -711,10 +640,7 @@ em {
   font-size: 12px;
 }
 
-
-/* =====================================================
-   FRASE FINAL
-===================================================== */
+/* ================= FRASE FINAL ================= */
 
 .quote {
   padding: 120px 9%;
@@ -739,8 +665,6 @@ blockquote {
 
   margin: 30px auto;
 
-  color: var(--cafe);
-
   font-size: clamp(35px, 5vw, 60px);
 
   line-height: 1.05;
@@ -750,16 +674,12 @@ blockquote {
   color: var(--dorado);
 
   font-size: 10px;
-
   font-weight: 600;
 
   letter-spacing: 4px;
 }
 
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* ================= FOOTER ================= */
 
 .footer {
   display: grid;
@@ -800,7 +720,7 @@ blockquote {
 
   padding-top: 25px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255,255,255,0.15);
 
   color: #a99c92;
 
@@ -809,16 +729,14 @@ blockquote {
   font-size: 9px;
 }
 
-
-/* =====================================================
-   ANIMACIÓN
-===================================================== */
+/* ================= ANIMACIÓN ================= */
 
 .reveal {
   animation: aparecer 0.8s ease both;
 }
 
 @keyframes aparecer {
+
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -828,12 +746,10 @@ blockquote {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
-
-/* =====================================================
-   TABLET
-===================================================== */
+/* ================= TABLET ================= */
 
 @media (max-width: 1050px) {
 
@@ -856,10 +772,7 @@ blockquote {
 
 }
 
-
-/* =====================================================
-   CELULAR
-===================================================== */
+/* ================= CELULAR ================= */
 
 @media (max-width: 700px) {
 
@@ -877,6 +790,16 @@ blockquote {
 
   .menu-toggle {
     display: block;
+
+    padding: 8px 15px;
+
+    background: transparent;
+
+    border: 1px solid var(--cafe);
+
+    color: var(--cafe);
+
+    font-family: "Montserrat", sans-serif;
   }
 
   .hero {
@@ -890,7 +813,7 @@ blockquote {
   }
 
   .hero-card {
-    min-height: 250px;
+    min-height: 280px;
   }
 
   .section {
